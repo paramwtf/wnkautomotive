@@ -1,0 +1,92 @@
+import { ShowcaseStory } from '../types';
+
+export const SHOWCASE_STORIES: ShowcaseStory[] = [
+  {
+    id: 'story-1',
+    slug: 'virtus-swoosh-edition',
+    title: 'The Monochrome Virtus',
+    subtitle: 'High-contrast speed geometry engineered for the Volkswagen Virtus GT.',
+    vehicle: 'Volkswagen Virtus GT (2024)',
+    wrapCollection: 'Swoosh Collection',
+    finish: 'Matte Deep Black on Pure White',
+    year: '2024',
+    photographer: 'WNK Studio Pune',
+    location: 'Lavasa Ghats, Maharashtra',
+    coverImage: '/assets/images/virtus-swoosh.png',
+    gallery: [
+      '/assets/images/virtus-swoosh.png',
+      '/assets/images/vehicle-08-virtus-black.jpg',
+      '/assets/images/vehicle-09-virtus-grey.png',
+      '/assets/images/vehicle-11-virtus-blue.jpg',
+      '/assets/images/vehicle-13-virtus-red.jpg',
+    ],
+    storyText: [
+      'The Volkswagen Virtus represents modern German proportions: sharp shoulder creases, low roofline, and wide stance. Our objective with the Swoosh collection was to accentuate these tension lines without cluttering the silhouette.',
+      'We engineered a multi-tier partial kit utilizing ultra-matte cast film with high-durability adhesive. The side speed graphic runs parallel to the waistline before slicing upward at the C-pillar.',
+      'Completed in a single afternoon session at the WNK Pune facility, the car retains factory paint while carrying the presence of a touring car contender.',
+    ],
+    specs: [
+      { label: 'Vehicle', value: 'Volkswagen Virtus 1.5 TSI GT' },
+      { label: 'Factory Colour', value: 'Candy White' },
+      { label: 'Wrap Coverage', value: 'Partial Body Kit & Bonnet Accent' },
+      { label: 'Film Specification', value: 'Dual-cast Air-Release 90µm' },
+      { label: 'Durability Rating', value: '4+ Years Outdoor' },
+    ],
+  },
+  {
+    id: 'story-2',
+    slug: 'ninja-300-nightshade',
+    title: 'Nightshade Ninja 300',
+    subtitle: 'Ultraviolet dark aesthetics for the twin-cylinder supersport.',
+    vehicle: 'Kawasaki Ninja 300 ABS (2023)',
+    wrapCollection: 'Nightshade Collection',
+    finish: 'Satin Dark Violet & Deep Charcoal',
+    year: '2023',
+    photographer: 'WNK Studio Pune',
+    location: 'Bavdhan, Pune',
+    coverImage: '/assets/images/vehicle-06-ninja300.jpg',
+    gallery: [
+      '/assets/images/vehicle-06-ninja300.jpg',
+      '/assets/images/vehicle-19-zx6r.jpg',
+    ],
+    storyText: [
+      'The Kawasaki Ninja 300 fairing geometry demands tight compound curve conformity. The Nightshade livery was laser scanned and patterned to fit each panel section with zero stretching.',
+      'Under daylight conditions, the deep charcoal base absorbs reflection, while the ultraviolet violet graphics explode with intensity under direct sun and streetlights.',
+    ],
+    specs: [
+      { label: 'Vehicle', value: 'Kawasaki Ninja 300 ABS' },
+      { label: 'Factory Colour', value: 'Ebony Black' },
+      { label: 'Wrap Coverage', value: 'Pre-cut Full Fairing Kit' },
+      { label: 'Film Specification', value: 'Polymeric Cast with Gloss Laminate' },
+      { label: 'Durability Rating', value: '3+ Years Outdoor' },
+    ],
+  },
+  {
+    id: 'story-3',
+    slug: 'thar-terrain-contour',
+    title: 'Topographic Expedition Thar',
+    subtitle: 'Heavy-duty elevation contour mapping for off-road durability.',
+    vehicle: 'Mahindra Thar 4x4 (2024)',
+    wrapCollection: 'Terrain Series',
+    finish: 'Textured Matte Contour Olive',
+    year: '2024',
+    photographer: 'WNK Studio Pune',
+    location: 'Tamhini Ghat, Western Ghats',
+    coverImage: '/assets/images/vehicle-15-thar.jpg',
+    gallery: [
+      '/assets/images/vehicle-15-thar.jpg',
+    ],
+    storyText: [
+      'Built for rugged exploration across muddy trails and loose rock passes. The topographical elevation lines trace Western Ghats mountain contours.',
+      'We selected an extra-thick rock-deflection laminate that shields door panels and wheel arch flanks from brush scratches and gravel kicks.',
+    ],
+    specs: [
+      { label: 'Vehicle', value: 'Mahindra Thar 4x4 Hard Top' },
+      { label: 'Factory Colour', value: 'Napoli Black' },
+      { label: 'Wrap Coverage', value: 'Full Body Overlanding Kit' },
+      { label: 'Film Specification', value: '110µm Heavy Textured Cast' },
+      { label: 'Durability Rating', value: '5 Years All-Terrain' },
+    ],
+  },
+];
+

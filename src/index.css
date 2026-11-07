@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #010101;
+  --charcoal: #171717;
+  --paper: #ffffff;
+  --surface: #f4f4f4;
+  --surface-2: #f4f4f2;
+  --muted: #666666;
+  --secondary: #454545;
+  --line: #dedede;
+  --field: #cecece;
+  --red: #f93030;
+}
+
+@layer base {
+  * {
+    border-color: var(--line);
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Archivo', sans-serif;
+    color: var(--ink);
+    background-color: var(--paper);
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* Red period accent utility */
+.red-dot::after {
+  content: '.';
+  color: var(--red);
+}
+
+/* Continuous carousel animation */
+@keyframes infinite-scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-infinite-scroll {
+  display: flex;
+  width: max-content;
+  animation: infinite-scroll-left 45s linear infinite;
+}
+
+.animate-infinite-scroll:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-infinite-scroll {
+    animation: none;
+    transform: none;
+    overflow-x: auto;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f4f4f4;
+}
+::-webkit-scrollbar-thumb {
+  background: #cecece;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #010101;
+}
+
