@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { Product } from '../../data/products';
+import { VEHICLE_DATABASE } from '../../data/vehicles';
 import { useCart } from '../../context/CartContext';
 import { useVehicleFilter } from '../../context/VehicleFilterContext';
 
@@ -11,6 +12,16 @@ interface ProductConfiguratorProps {
 export const ProductConfigurator: React.FC<ProductConfiguratorProps> = ({ product }) => {
   const { addToCart } = useCart();
   const { selectedVehicle } = useVehicleFilter();
+
+  const knownVariants = useMemo(() => {
+    const makeObj = VEHICLE_DATABASE.find(
+      (m) => m.name.toLowerCase() === product.make.toLowerCase()
+    );
+    const modelObj = makeObj?.models.find(
+      (m) => m.name.toLowerCase() === product.model.toLowerCase()
+    );
+    return modelObj?.variants || [];
+  }, [product.make, product.model]);
 
   // Initial options
   const [selectedColour, setSelectedColour] = useState(product.colourOptions[0] || 'Black');
@@ -25,7 +36,7 @@ export const ProductConfigurator: React.FC<ProductConfiguratorProps> = ({ produc
     selectedVehicle.year ? String(selectedVehicle.year) : String(product.yearTo)
   );
   const [vehicleVariant, setVehicleVariant] = useState<string>(
-    selectedVehicle.variant || product.variant
+    selectedVehicle.variant || product.variant || (knownVariants[0] || 'Standard')
   );
 
   const [addedState, setAddedState] = useState(false);
@@ -100,32 +111,57 @@ export const ProductConfigurator: React.FC<ProductConfiguratorProps> = ({ produc
         </p>
 
         {/* Variant selection */}
-        <div className="mt-3 pt-3 border-t border-line/60 grid grid-cols-2 gap-3">
-          <div>
-            <label className="font-mono text-[10px] text-muted block mb-1">YEAR</label>
-            <select
-              value={vehicleYear}
-              onChange={(e) => setVehicleYear(e.target.value)}
-              className="w-full h-[38px] px-2 bg-white border border-field text-[13px] font-sans text-ink outline-none"
-            >
-              {Array.from({ length: product.yearTo - product.yearFrom + 1 }, (_, i) => product.yearFrom + i).map(
-                (yr) => (
-                  <option key={yr} value={yr}>
-                    {yr}
-                  </option>
-                )
+        <div className="mt-4 pt-4 border-t border-line/60 space-y-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label className="font-mono text-[10px] text-muted block mb-1.5 uppercase tracking-[0.3px]">
+                01 / YEAR
+              </label>
+              <select
+                value={vehicleYear}
+                onChange={(e) => setVehicleYear(e.target.value)}
+                className="w-full h-[44px] px-3 bg-white border border-field text-[13px] font-sans text-ink outline-none focus:border-ink cursor-pointer"
+              >
+                {Array.from({ length: product.yearTo - product.yearFrom + 1 }, (_, i) => product.yearFrom + i).map(
+                  (yr) => (
+                    <option key={yr} value={yr}>
+                      {yr}
+                    </option>
+                  )
+                )}
+              </select>
+            </div>
+            <div>
+              <label className="font-mono text-[10px] text-muted block mb-1.5 uppercase tracking-[0.3px]">
+                02 / TRIM / VARIANT
+              </label>
+              {knownVariants.length > 0 ? (
+                <div className="grid grid-cols-2 gap-2 w-full">
+                  {knownVariants.map((v) => (
+                    <button
+                      key={v}
+                      type="button"
+                      onClick={() => setVehicleVariant(v)}
+                      className={`min-h-[44px] h-[44px] px-3 font-mono text-[12px] sm:text-[13px] transition-colors border flex items-center justify-center text-center cursor-pointer ${
+                        vehicleVariant === v
+                          ? 'bg-ink text-white border-ink font-medium'
+                          : 'bg-white text-ink border-field hover:border-ink'
+                      }`}
+                    >
+                      {v}
+                    </button>
+                  ))}
+                </div>
+              ) : (
+                <input
+                  type="text"
+                  value={vehicleVariant}
+                  onChange={(e) => setVehicleVariant(e.target.value)}
+                  className="w-full h-[44px] px-3 bg-white border border-field text-[13px] font-sans text-ink outline-none focus:border-ink"
+                  placeholder="e.g. Standard"
+                />
               )}
-            </select>
-          </div>
-          <div>
-            <label className="font-mono text-[10px] text-muted block mb-1">TRIM / VARIANT</label>
-            <input
-              type="text"
-              value={vehicleVariant}
-              onChange={(e) => setVehicleVariant(e.target.value)}
-              className="w-full h-[38px] px-2 bg-white border border-field text-[13px] font-sans text-ink outline-none"
-              placeholder="e.g. GT / Highline"
-            />
+            </div>
           </div>
         </div>
       </div>
@@ -135,12 +171,13 @@ export const ProductConfigurator: React.FC<ProductConfiguratorProps> = ({ produc
         <label className="font-mono text-[11px] uppercase tracking-[0.4px] text-muted block mb-2">
           COLOUR: <span className="text-ink font-medium">{selectedColour}</span>
         </label>
-        <div className="flex flex-wrap gap-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:flex-wrap gap-2 w-full">
           {product.colourOptions.map((c) => (
             <button
               key={c}
+              type="button"
               onClick={() => setSelectedColour(c)}
-              className={`h-[44px] px-4 font-mono text-[13px] transition-colors border ${
+              className={`min-h-[44px] h-[44px] px-4 font-mono text-[12px] sm:text-[13px] transition-colors border flex items-center justify-center text-center cursor-pointer ${
                 selectedColour === c
                   ? 'bg-ink text-white border-ink font-medium'
                   : 'bg-white text-ink border-field hover:border-ink'
@@ -157,12 +194,13 @@ export const ProductConfigurator: React.FC<ProductConfiguratorProps> = ({ produc
         <label className="font-mono text-[11px] uppercase tracking-[0.4px] text-muted block mb-2">
           SURFACE FINISH: <span className="text-ink font-medium">{selectedFinish}</span>
         </label>
-        <div className="flex flex-wrap gap-2">
+        <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2 w-full">
           {product.finishOptions.map((f) => (
             <button
               key={f}
+              type="button"
               onClick={() => setSelectedFinish(f)}
-              className={`h-[44px] px-4 font-mono text-[13px] transition-colors border ${
+              className={`min-h-[44px] h-[44px] px-4 font-mono text-[12px] sm:text-[13px] transition-colors border flex items-center justify-center text-center cursor-pointer ${
                 selectedFinish === f
                   ? 'bg-ink text-white border-ink font-medium'
                   : 'bg-white text-ink border-field hover:border-ink'
@@ -179,12 +217,13 @@ export const ProductConfigurator: React.FC<ProductConfiguratorProps> = ({ produc
         <label className="font-mono text-[11px] uppercase tracking-[0.4px] text-muted block mb-2">
           WRAP COVERAGE: <span className="text-ink font-medium">{selectedCoverage}</span>
         </label>
-        <div className="flex flex-wrap gap-2">
+        <div className="grid grid-cols-1 sm:flex sm:flex-wrap gap-2 w-full">
           {product.coverageOptions.map((cov) => (
             <button
               key={cov}
+              type="button"
               onClick={() => setSelectedCoverage(cov)}
-              className={`h-[44px] px-4 font-mono text-[13px] transition-colors border ${
+              className={`min-h-[44px] h-[44px] px-4 font-mono text-[12px] sm:text-[13px] transition-colors border flex items-center justify-center text-center cursor-pointer ${
                 selectedCoverage === cov
                   ? 'bg-ink text-white border-ink font-medium'
                   : 'bg-white text-ink border-field hover:border-ink'
@@ -202,12 +241,13 @@ export const ProductConfigurator: React.FC<ProductConfiguratorProps> = ({ produc
           <label className="font-mono text-[11px] uppercase tracking-[0.4px] text-muted block mb-2">
             WHEEL DIAMETER: <span className="text-ink font-medium">{selectedWheelSize}</span>
           </label>
-          <div className="flex flex-wrap gap-2">
+          <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2 w-full">
             {product.wheelSizes.map((ws) => (
               <button
                 key={ws}
+                type="button"
                 onClick={() => setSelectedWheelSize(ws)}
-                className={`h-[44px] px-4 font-mono text-[13px] transition-colors border ${
+                className={`min-h-[44px] h-[44px] px-4 font-mono text-[12px] sm:text-[13px] transition-colors border flex items-center justify-center text-center cursor-pointer ${
                   selectedWheelSize === ws
                     ? 'bg-ink text-white border-ink font-medium'
                     : 'bg-white text-ink border-field hover:border-ink'

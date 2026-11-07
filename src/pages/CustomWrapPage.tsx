@@ -80,11 +80,11 @@ export const CustomWrapPage: React.FC = () => {
           {/* Left Column: Aprilia RS 457 Lightning McQueen + Process Story */}
           <div className="lg:col-span-6 flex flex-col">
             {/* Aprilia RS 457 Lightning McQueen Edition Artwork */}
-            <div className="w-full bg-[#f4f4f2] border border-line p-6 sm:p-10 flex items-center justify-center overflow-hidden">
+            <div className="w-full aspect-[16/10] sm:aspect-[4/3] bg-[#f4f4f2] border border-line overflow-hidden relative shadow-sm">
               <img
                 src="/assets/images/rs457/web/rs457-lightning-mcqueen-01.webp"
                 alt="Aprilia RS 457 Lightning McQueen Edition Custom Wrap"
-                className="w-full h-auto max-h-[440px] object-contain filter drop-shadow-[0_16px_30px_rgba(0,0,0,0.18)] hover:scale-102 transition-transform duration-500"
+                className="w-full h-full object-cover object-center filter drop-shadow-md hover:scale-105 transition-transform duration-500"
               />
             </div>
 

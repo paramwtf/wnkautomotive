@@ -7,7 +7,7 @@ export const ProcessSection: React.FC = () => {
       <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[57.6px]">
         {/* Eyebrow */}
         <span className="font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.4px] text-white/60 block mb-3">
-          03 / THE PROCESS
+          THE PROCESS
         </span>
 
         {/* Heading: How it works. */}

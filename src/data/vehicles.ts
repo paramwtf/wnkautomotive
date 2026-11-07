@@ -151,7 +151,7 @@ export const VEHICLE_DATABASE: VehicleMake[] = [
         name: '390 Adventure',
         type: 'Bike',
         years: [2020, 2021, 2022, 2023, 2024, 2025],
-        variants: ['Spoke Wheel', 'Alloy Wheel', 'X Variant'],
+        variants: ['X', 'R'],
       },
       {
         name: 'RC 390',
@@ -169,7 +169,7 @@ export const VEHICLE_DATABASE: VehicleMake[] = [
         name: 'RS 457',
         type: 'Bike',
         years: [2024, 2025],
-        variants: ['Racing Stripes', 'Prismatic Dark', 'Opalescent Light'],
+        variants: ['Standard', 'GP Replica'],
       },
     ],
   },

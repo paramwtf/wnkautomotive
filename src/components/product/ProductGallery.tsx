@@ -14,11 +14,11 @@ export const ProductGallery: React.FC<ProductGalleryProps> = ({ images, alt }) =
   return (
     <div className="w-full space-y-4">
       {/* Primary Display Frame */}
-      <div className="relative aspect-[4/3] bg-surface border border-line overflow-hidden">
+      <div className="relative aspect-[16/10] sm:aspect-[4/3] bg-[#f4f4f2] border border-line overflow-hidden shadow-sm">
         <img
           src={activeImage}
           alt={alt}
-          className="size-full object-cover transition-opacity duration-300"
+          className="size-full object-cover object-center transition-opacity duration-300"
         />
         <div className="absolute top-4 left-4 bg-paper/90 backdrop-blur-sm border border-line px-3 py-1">
           <span className="font-mono text-[10px] uppercase tracking-[0.4px] text-ink">

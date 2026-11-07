@@ -123,8 +123,8 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* GIANT Typographic Statement: BE UNIQUE. (Exact match to media_1794048055028_a8b761c6.png) */}
-        <div className="w-full my-10 sm:my-16 lg:my-20 overflow-hidden">
-          <h2 className="font-sans font-black text-[15.2vw] sm:text-[15.4vw] lg:text-[15.6vw] tracking-[-0.04em] leading-[0.82] text-ink select-none whitespace-nowrap flex items-baseline">
+        <div className="w-full my-10 sm:my-16 lg:my-20 overflow-hidden flex items-baseline">
+          <h2 className="font-sans font-black text-[11.2vw] sm:text-[11.8vw] lg:text-[12.2vw] tracking-[-0.04em] leading-[0.85] text-ink select-none whitespace-nowrap flex items-baseline">
             <span>BE UNIQUE</span>
             <span
               className="inline-block bg-[#e61919] w-[0.14em] h-[0.14em] ml-[0.06em] flex-shrink-0"

@@ -4,6 +4,7 @@ import { VideoHero } from '../components/home/VideoHero';
 import { VehicleFinder } from '../components/home/VehicleFinder';
 import { ProcessSection } from '../components/home/ProcessSection';
 import { ReviewCarousel } from '../components/home/ReviewCarousel';
+import { FaqAccordion } from '../components/home/FaqAccordion';
 import { ProductCard } from '../components/common/ProductCard';
 import { PRODUCTS } from '../data/products';
 import { FAQS } from '../data/faqs';
@@ -11,15 +12,6 @@ import { FAQS } from '../data/faqs';
 export const HomePage: React.FC = () => {
   const featuredProducts = PRODUCTS.slice(0, 4); // First 4 flagship motorcycle wraps
   const sampleFaqs = FAQS.slice(0, 4);
-
-  // Exclusive Aprilia & KTM Highlights
-  const apriliaKtmHighlights = PRODUCTS.filter(
-    (p) =>
-      p.slug.includes('lightning-mcqueen') ||
-      p.slug.includes('punisher') ||
-      p.slug.includes('marlboro') ||
-      p.slug.includes('mayhem')
-  );
 
   return (
     <div className="w-full bg-paper">
@@ -75,7 +67,7 @@ export const HomePage: React.FC = () => {
               CURATED SELECTION / POPULAR KITS
             </span>
             <h2 className="font-sans font-medium text-[28px] md:text-[40px] text-ink leading-tight">
-              Flagship Studio Liveries<span className="text-red">.</span>
+              Best Sellers<span className="text-red">.</span>
             </h2>
           </div>
           <Link
@@ -94,132 +86,8 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* 5. Category Split Pillars (Cars vs Bikes vs Custom) */}
-      <section className="w-full bg-[#f4f4f2] border-y border-line py-16">
-        <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[57.6px]">
-          <div className="mb-10">
-            <span className="font-mono text-[10px] md:text-[11px] uppercase tracking-[0.4px] text-muted block mb-1">
-              PRODUCT DISCIPLINES
-            </span>
-            <h2 className="font-sans font-medium text-[28px] md:text-[36px] text-ink">
-              Choose your canvas<span className="text-red">.</span>
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Cars */}
-            <Link
-              to="/shop?type=Car"
-              className="group p-8 bg-paper border border-line hover:border-ink transition-all flex flex-col justify-between min-h-[320px]"
-            >
-              <div>
-                <span className="font-mono text-[11px] uppercase tracking-[0.4px] text-muted block mb-2">
-                  01 / AUTOMOTIVE
-                </span>
-                <h3 className="font-sans font-medium text-[24px] text-ink mb-3 group-hover:text-charcoal">
-                  Car Wraps & Kits
-                </h3>
-                <p className="font-sans text-[14px] text-secondary leading-relaxed">
-                  Full exterior color changes, side profile speed lines, and overlanding contour graphics for Virtus, Thar, Hilux, and Taigun.
-                </p>
-              </div>
-              <div className="mt-8 pt-4 border-t border-line flex items-center justify-between font-mono text-[12px] text-ink">
-                <span>Browse Cars</span>
-                <span className="group-hover:translate-x-1 transition-transform">→</span>
-              </div>
-            </Link>
-
-            {/* Bikes */}
-            <Link
-              to="/shop?type=Bike"
-              className="group p-8 bg-paper border border-line hover:border-ink transition-all flex flex-col justify-between min-h-[320px]"
-            >
-              <div>
-                <span className="font-mono text-[11px] uppercase tracking-[0.4px] text-muted block mb-2">
-                  02 / MOTORCYCLES
-                </span>
-                <h3 className="font-sans font-medium text-[24px] text-ink mb-3 group-hover:text-charcoal">
-                  Motorcycle Fairing Wraps
-                </h3>
-                <p className="font-sans text-[14px] text-secondary leading-relaxed">
-                  Pre-cut panels and full kits for Kawasaki Ninja, KTM Duke, Aprilia RS 457, and BMW GS adventure series.
-                </p>
-              </div>
-              <div className="mt-8 pt-4 border-t border-line flex items-center justify-between font-mono text-[12px] text-ink">
-                <span>Browse Bikes</span>
-                <span className="group-hover:translate-x-1 transition-transform">→</span>
-              </div>
-            </Link>
-
-            {/* Bespoke Custom */}
-            <Link
-              to="/custom-wrap"
-              className="group p-8 bg-ink text-white border border-ink hover:bg-charcoal transition-all flex flex-col justify-between min-h-[320px]"
-            >
-              <div>
-                <span className="font-mono text-[11px] uppercase tracking-[0.4px] text-white/60 block mb-2">
-                  03 / BESPOKE STUDIO
-                </span>
-                <h3 className="font-sans font-medium text-[24px] text-white mb-3">
-                  Custom Livery Commissions
-                </h3>
-                <p className="font-sans text-[14px] text-white/80 leading-relaxed">
-                  Work directly with WNK livery designers. Provide your concept, vehicle year, and livery references for a tailored build.
-                </p>
-              </div>
-              <div className="mt-8 pt-4 border-t border-white/20 flex items-center justify-between font-mono text-[12px] text-white">
-                <span>Request Custom Project</span>
-                <span className="group-hover:translate-x-1 transition-transform">↗</span>
-              </div>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* 6. Aprilia RS 457 & KTM Racing Studio Spotlight */}
-      <section className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[57.6px] py-14 lg:py-20 border-b border-line">
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
-          <div>
-            <div className="flex items-center gap-2 mb-2">
-              <span className="font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.4px] text-muted">
-                MOTORCYCLE SPECIAL DISCIPLINES
-              </span>
-              <span className="text-muted text-[11px]">•</span>
-              <span className="font-mono text-[11px] text-ink uppercase">STUDIO RELEASES</span>
-            </div>
-            <h2 className="font-sans font-medium text-[28px] sm:text-[38px] text-ink tracking-tight">
-              Aprilia RS 457 & KTM Racing Editions<span className="text-red">.</span>
-            </h2>
-            <p className="font-sans text-[14px] sm:text-[15px] text-secondary mt-1.5 max-w-2xl leading-relaxed">
-              Aerodynamically mapped fairing kits tailored to the twin-spar Aprilia RS 457 chassis and KTM 390 Adventure all-terrain platform.
-            </p>
-          </div>
-
-          <div className="flex flex-wrap items-center gap-3">
-            <Link
-              to="/shop?type=Bike&make=Aprilia"
-              className="px-4 py-2 border border-line hover:border-ink font-mono text-[11px] uppercase text-ink transition-colors"
-            >
-              All Aprilia RS 457 ({PRODUCTS.filter(p => p.make === 'Aprilia').length}) →
-            </Link>
-            <Link
-              to="/shop?type=Bike&make=KTM"
-              className="px-4 py-2 border border-line hover:border-ink font-mono text-[11px] uppercase text-ink transition-colors"
-            >
-              All KTM ({PRODUCTS.filter(p => p.make === 'KTM').length}) →
-            </Link>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {apriliaKtmHighlights.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-      </section>
-
-      {/* 7. Outside the lines. Section (Exact match to media_1794048028386_817a5c0b.jpg) */}
-      <section className="w-full bg-white border-b border-line py-16 sm:py-24 overflow-hidden">
+      {/* 5. Outside the lines. Section */}
+      <section className="w-full bg-white border-y border-line py-16 sm:py-24 overflow-hidden">
         <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[57.6px]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
             {/* Left Column: Eyebrow, Outside the lines., Description, CTA */}
@@ -244,12 +112,12 @@ export const HomePage: React.FC = () => {
             </div>
 
             {/* Right Column: Aprilia RS 457 Mayhem Edition */}
-            <div className="lg:col-span-7 flex items-center justify-center">
-              <div className="w-full max-w-[720px] overflow-hidden flex items-center justify-center p-2 sm:p-4">
+            <div className="lg:col-span-7 flex items-center justify-center w-full">
+              <div className="w-full aspect-[16/10] bg-[#f4f4f2] border border-line overflow-hidden relative shadow-sm">
                 <img
                   src="/assets/images/rs457/web/rs457-mayhem-01.webp"
                   alt="Aprilia RS 457 Mayhem Edition"
-                  className="w-full h-auto max-h-[480px] object-contain filter drop-shadow-[0_20px_35px_rgba(0,0,0,0.16)] hover:scale-[1.02] transition-transform duration-500"
+                  className="w-full h-full object-cover object-center filter drop-shadow-md hover:scale-105 transition-transform duration-500"
                 />
               </div>
             </div>
@@ -287,17 +155,8 @@ export const HomePage: React.FC = () => {
             </Link>
           </div>
 
-          <div className="lg:col-span-8 space-y-4">
-            {sampleFaqs.map((faq) => (
-              <div key={faq.id} className="p-6 bg-paper border border-line">
-                <h3 className="font-sans font-medium text-[17px] text-ink mb-2">
-                  {faq.question}
-                </h3>
-                <p className="font-sans text-[14px] text-secondary leading-relaxed">
-                  {faq.answer}
-                </p>
-              </div>
-            ))}
+          <div className="lg:col-span-8">
+            <FaqAccordion items={sampleFaqs} />
           </div>
         </div>
       </section>
@@ -313,7 +172,7 @@ export const HomePage: React.FC = () => {
               Ready to redefine your ride<span className="text-red">?</span>
             </h2>
             <p className="font-sans text-[16px] text-white/80 max-w-xl mt-2">
-              Explore the complete 15-design catalogue or commission a one-off bespoke project with WNK Automotive studio.
+              Explore the complete catalogue or commission a one-off bespoke project with WNK Automotive studio.
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-4">

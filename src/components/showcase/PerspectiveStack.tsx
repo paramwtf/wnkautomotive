@@ -20,7 +20,7 @@ export const SHOWCASE_PROJECTS: ShowcaseProject[] = [
   {
     id: 'proj-mayhem',
     tag: '01 / MAYHEM',
-    title: 'Mayhem / Cyberpunk',
+    title: 'Mayhem Edition',
     vehicle: 'Aprilia / RS 457',
     image: '/assets/images/rs457/web/rs457-mayhem-01.webp',
     secondaryImage: '/assets/images/rs457/web/rs457-mayhem-02.webp',
@@ -31,7 +31,7 @@ export const SHOWCASE_PROJECTS: ShowcaseProject[] = [
   {
     id: 'proj-spiderman',
     tag: '02 / SPIDERMAN',
-    title: 'Spiderman / Miles Morales',
+    title: 'Spiderman Miles Edition',
     vehicle: 'Aprilia / RS 457',
     image: '/assets/images/rs457/web/rs457-miles-morales-01.webp',
     secondaryImage: '/assets/images/rs457/web/rs457-miles-morales-02.webp',
@@ -42,7 +42,7 @@ export const SHOWCASE_PROJECTS: ShowcaseProject[] = [
   {
     id: 'proj-venom',
     tag: '03 / VENOM',
-    title: 'Venom / Dark Symbiote',
+    title: 'Venom Edition',
     vehicle: 'Aprilia / RS 457',
     image: '/assets/images/rs457/web/rs457-venom-01.webp',
     secondaryImage: '/assets/images/rs457/web/rs457-venom-02.webp',
@@ -53,10 +53,10 @@ export const SHOWCASE_PROJECTS: ShowcaseProject[] = [
   {
     id: 'proj-pikepeak',
     tag: '04 / PIKE PEAK',
-    title: 'Pike Peak / Hill Climb',
+    title: 'Pike Peak Edition',
     vehicle: 'KTM / 390 Adventure',
-    image: '/assets/images/ktm/web/ktm-adv390-punisher-02.webp',
-    secondaryImage: '/assets/images/ktm/web/ktm-adv390-punisher-01.webp',
+    image: '/assets/images/ktm/web/ktm-adv390-punisher-01.webp',
+    secondaryImage: '/assets/images/ktm/web/ktm-adv390-punisher-02.webp',
     slug: 'pike-peak-edition-ktm-390-adventure',
     description:
       'Race-bred performance aesthetics inspired by the world’s most demanding hill climb, tailored to the KTM 390 Adventure chassis.',
@@ -68,7 +68,7 @@ const STACK_PANELS = [
   {
     id: 's-0',
     tag: '01 / MAYHEM',
-    edition: 'MAYHEM / CYBERPUNK',
+    edition: 'MAYHEM EDITION',
     project: SHOWCASE_PROJECTS[0],
     image: '/assets/images/rs457/web/rs457-mayhem-01.webp',
     isDetail: false,
@@ -76,7 +76,7 @@ const STACK_PANELS = [
   {
     id: 's-1',
     tag: '02 / SPIDERMAN',
-    edition: 'SPIDERMAN / MILES MORALES',
+    edition: 'SPIDERMAN MILES EDITION',
     project: SHOWCASE_PROJECTS[1],
     image: '/assets/images/rs457/web/rs457-miles-morales-01.webp',
     isDetail: false,
@@ -84,7 +84,7 @@ const STACK_PANELS = [
   {
     id: 's-2',
     tag: '03 / VENOM',
-    edition: 'VENOM / DARK SYMBIOTE',
+    edition: 'VENOM EDITION',
     project: SHOWCASE_PROJECTS[2],
     image: '/assets/images/rs457/web/rs457-venom-01.webp',
     isDetail: false,
@@ -92,15 +92,15 @@ const STACK_PANELS = [
   {
     id: 's-3',
     tag: '04 / PIKE PEAK',
-    edition: 'PIKE PEAK / HILL CLIMB',
+    edition: 'PIKE PEAK EDITION',
     project: SHOWCASE_PROJECTS[3],
-    image: '/assets/images/ktm/web/ktm-adv390-punisher-02.webp',
+    image: '/assets/images/ktm/web/ktm-adv390-punisher-01.webp',
     isDetail: false,
   },
   {
     id: 's-4',
     tag: '01 / MAYHEM · DETAIL',
-    edition: 'MAYHEM / FAIRING CLOSEUP',
+    edition: 'MAYHEM · DETAIL',
     project: SHOWCASE_PROJECTS[0],
     image: '/assets/images/rs457/web/rs457-mayhem-02.webp',
     isDetail: true,
@@ -108,7 +108,7 @@ const STACK_PANELS = [
   {
     id: 's-5',
     tag: '02 / SPIDERMAN · DETAIL',
-    edition: 'SPIDERMAN / TANK GRAPHIC',
+    edition: 'SPIDERMAN · DETAIL',
     project: SHOWCASE_PROJECTS[1],
     image: '/assets/images/rs457/web/rs457-miles-morales-02.webp',
     isDetail: true,
@@ -116,7 +116,7 @@ const STACK_PANELS = [
   {
     id: 's-6',
     tag: '03 / VENOM · DETAIL',
-    edition: 'VENOM / SYMBIOTE DETAIL',
+    edition: 'VENOM · DETAIL',
     project: SHOWCASE_PROJECTS[2],
     image: '/assets/images/rs457/web/rs457-venom-02.webp',
     isDetail: true,
@@ -124,9 +124,9 @@ const STACK_PANELS = [
   {
     id: 's-7',
     tag: '04 / PIKE PEAK · DETAIL',
-    edition: 'PIKE PEAK / REAR SUBFRAME',
+    edition: 'PIKE PEAK · DETAIL',
     project: SHOWCASE_PROJECTS[3],
-    image: '/assets/images/ktm/web/ktm-adv390-punisher-01.webp',
+    image: '/assets/images/ktm/web/ktm-adv390-punisher-02.webp',
     isDetail: true,
   },
 ];
@@ -400,13 +400,13 @@ export const PerspectiveStack: React.FC = () => {
                 onClick={() => setSelectedProject(project)}
                 className="group flex flex-col space-y-3 cursor-pointer"
               >
-                <div className="aspect-[4/3] bg-[#f0f2f5] border border-line overflow-hidden flex items-center justify-center p-3 relative hover:-translate-y-1.5 transition-transform duration-300 shadow-sm hover:shadow-md">
+                <div className="aspect-[16/10] bg-[#f4f4f2] border border-line overflow-hidden relative shadow-sm hover:shadow-md hover:-translate-y-1.5 transition-all duration-300">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-contain filter drop-shadow-md group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover object-center filter drop-shadow-sm group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors flex items-center justify-center">
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
                     <span className="opacity-0 group-hover:opacity-100 font-mono text-[11px] bg-white px-3 py-1 border border-line shadow-sm transition-opacity">
                       Open window →
                     </span>
@@ -465,11 +465,11 @@ export const PerspectiveStack: React.FC = () => {
             </div>
 
             {/* Large Vehicle Artwork Image (Figma node 2041:9402) */}
-            <div className="w-full h-[280px] sm:h-[420px] lg:h-[500px] bg-[#f2f4f7] border border-line flex items-center justify-center p-4 sm:p-8 mb-8 overflow-hidden relative">
+            <div className="w-full h-[320px] sm:h-[460px] lg:h-[520px] bg-[#f2f4f7] border border-line flex items-center justify-center mb-8 overflow-hidden relative shadow-sm">
               <img
                 src={selectedProject.image}
                 alt={`${selectedProject.title} ${selectedProject.vehicle}`}
-                className="w-full h-full object-contain filter drop-shadow-[0_16px_22px_rgba(0,0,0,0.2)]"
+                className="w-full h-full object-cover object-center filter drop-shadow-[0_16px_22px_rgba(0,0,0,0.15)]"
               />
             </div>
 

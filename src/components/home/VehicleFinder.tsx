@@ -73,10 +73,10 @@ export const VehicleFinder: React.FC<VehicleFinderProps> = ({ className = '' }) 
             className="h-[48px] px-3 bg-white border border-field focus:border-ink rounded-none font-sans text-[14px] text-ink outline-none transition-colors cursor-pointer"
           >
             <option value="">Select Vehicle Make</option>
-            <optgroup label="Cars">
+            <optgroup label="Cars (Coming Soon)">
               {VEHICLE_DATABASE.filter((m) => m.type === 'Car').map((m) => (
-                <option key={m.name} value={m.name}>
-                  {m.name}
+                <option key={m.name} value={m.name} disabled className="text-muted/60 bg-surface">
+                  {m.name} (Coming Soon)
                 </option>
               ))}
             </optgroup>
