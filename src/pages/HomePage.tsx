@@ -128,8 +128,8 @@ export const HomePage: React.FC = () => {
       {/* 8. Production Process */}
       <ProcessSection />
 
-      {/* 7. Client Reviews Carousel */}
-      <section className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[57.6px] py-16">
+      {/* 7. Client Reviews Infinite Marquee */}
+      <section className="w-full py-16 sm:py-20 overflow-hidden">
         <ReviewCarousel />
       </section>
 

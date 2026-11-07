@@ -39,31 +39,40 @@
   color: var(--red);
 }
 
-/* Continuous carousel animation */
-@keyframes infinite-scroll-left {
+/* Continuous Marquee Animation */
+@keyframes wnk-marquee {
   0% {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translate3d(-100%, 0, 0);
   }
 }
 
-.animate-infinite-scroll {
+.animate-wnk-marquee {
   display: flex;
-  width: max-content;
-  animation: infinite-scroll-left 45s linear infinite;
+  flex-shrink: 0;
+  animation: wnk-marquee 70s linear infinite;
+  will-change: transform;
 }
 
-.animate-infinite-scroll:hover {
-  animation-play-state: paused;
+/* Pause on desktop hover */
+@media (hover: hover) and (pointer: fine) {
+  .marquee-group:hover .animate-wnk-marquee {
+    animation-play-state: paused;
+  }
 }
 
+/* Accessibility: Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .animate-infinite-scroll {
-    animation: none;
-    transform: none;
-    overflow-x: auto;
+  .animate-wnk-marquee {
+    animation: none !important;
+    transform: none !important;
+  }
+  .marquee-scroll-container {
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
   }
 }
 
