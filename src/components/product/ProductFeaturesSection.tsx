@@ -104,27 +104,51 @@ export const ProductFeaturesSection: React.FC = () => {
         </div>
       </div>
 
-      {/* Editorial Information: Materials & Colour Note (Duplicate Installation & Care removed) */}
+      {/* Editorial Information: Installation, Care, Materials & Colour Note */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-14 pt-4">
-        <div>
-          <h4 className="font-sans font-medium text-[16px] sm:text-[17px] text-ink mb-2">
-            Materials
-          </h4>
-          <p className="font-sans text-[14px] text-secondary leading-relaxed mb-3">
-            We use high-quality cast films from brands including Arlon, Avery, 3M and Hexis. Material is selected to suit the design and application.
-          </p>
-          <p className="font-sans text-[14px] text-secondary leading-relaxed">
-            Quality films help deliver clear print detail, consistent colour and a smooth finish.
-          </p>
+        {/* Left Column: Installation & Care */}
+        <div className="space-y-8">
+          <div>
+            <h4 className="font-sans font-medium text-[16px] sm:text-[17px] text-ink mb-2">
+              Installation
+            </h4>
+            <p className="font-sans text-[14px] text-secondary leading-relaxed">
+              Apply to a clean, dry surface free from wax and grease. Professional installation is recommended. Check surface suitability before applying over PPF, ceramic coating or repainted panels.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="font-sans font-medium text-[16px] sm:text-[17px] text-ink mb-2">
+              Care
+            </h4>
+            <p className="font-sans text-[14px] text-secondary leading-relaxed">
+              Wash gently with mild vehicle shampoo and a soft cloth. Avoid harsh solvents, abrasive cleaners and pressure-washer jets directed at the edges.
+            </p>
+          </div>
         </div>
 
-        <div>
-          <h4 className="font-sans font-medium text-[16px] sm:text-[17px] text-ink mb-2">
-            Colour note
-          </h4>
-          <p className="font-sans text-[14px] text-secondary leading-relaxed">
-            Printed colours may vary slightly from your screen and with lighting, finish and the vehicle's base colour.
-          </p>
+        {/* Right Column: Materials & Colour note */}
+        <div className="space-y-8">
+          <div>
+            <h4 className="font-sans font-medium text-[16px] sm:text-[17px] text-ink mb-2">
+              Materials
+            </h4>
+            <p className="font-sans text-[14px] text-secondary leading-relaxed mb-3">
+              We use high-quality cast films from brands including Arlon, Avery, 3M and Hexis. Material is selected to suit the design and application.
+            </p>
+            <p className="font-sans text-[14px] text-secondary leading-relaxed">
+              Quality films help deliver clear print detail, consistent colour and a smooth finish.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="font-sans font-medium text-[16px] sm:text-[17px] text-ink mb-2">
+              Colour note
+            </h4>
+            <p className="font-sans text-[14px] text-secondary leading-relaxed">
+              Printed colours may vary slightly from your screen and with lighting, finish and the vehicle's base colour.
+            </p>
+          </div>
         </div>
       </div>
     </div>

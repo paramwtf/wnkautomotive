@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { getProductBySlug, PRODUCTS } from '../data/products';
 import { ProductGallery } from '../components/product/ProductGallery';
@@ -8,7 +8,6 @@ import { ProductCard } from '../components/common/ProductCard';
 
 export const ProductDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
-  const [activeTab, setActiveTab] = useState<'details' | 'specs'>('details');
 
   if (!slug) {
     return <Navigate to="/shop" replace />;
@@ -69,65 +68,6 @@ export const ProductDetailPage: React.FC = () => {
               images={product.galleryImages.length > 0 ? product.galleryImages : [product.cardImage]}
               alt={product.imageAlt || product.name}
             />
-
-            {/* Information Tabs */}
-            <div className="mt-10 pt-8 border-t border-line">
-              <div className="flex items-center gap-6 border-b border-line pb-2 mb-6">
-                <button
-                  onClick={() => setActiveTab('details')}
-                  className={`font-mono text-[12px] uppercase tracking-[0.4px] pb-2 transition-colors ${
-                    activeTab === 'details'
-                      ? 'text-ink font-medium border-b-2 border-ink -mb-[10px]'
-                      : 'text-muted hover:text-ink'
-                  }`}
-                >
-                  Product Details
-                </button>
-                <button
-                  onClick={() => setActiveTab('specs')}
-                  className={`font-mono text-[12px] uppercase tracking-[0.4px] pb-2 transition-colors ${
-                    activeTab === 'specs'
-                      ? 'text-ink font-medium border-b-2 border-ink -mb-[10px]'
-                      : 'text-muted hover:text-ink'
-                  }`}
-                >
-                  Specifications
-                </button>
-              </div>
-
-              {activeTab === 'details' && (
-                <div className="space-y-4 font-sans text-[15px] text-secondary leading-relaxed">
-                  <p>{product.description}</p>
-                  <div className="p-4 bg-surface border border-line">
-                    <span className="font-mono text-[11px] uppercase tracking-[0.4px] text-ink font-medium block mb-2">
-                      INCLUDED IN THE BOX:
-                    </span>
-                    <p className="text-[14px] text-secondary">{product.kitContents}</p>
-                  </div>
-                </div>
-              )}
-
-              {activeTab === 'specs' && (
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 font-sans text-[14px]">
-                  <div className="p-3.5 bg-surface border border-line">
-                    <span className="font-mono text-[10px] text-muted block uppercase">Material Grade</span>
-                    <span className="text-ink font-medium mt-0.5 block">Dual-Cast Premium Automotive Vinyl</span>
-                  </div>
-                  <div className="p-3.5 bg-surface border border-line">
-                    <span className="font-mono text-[10px] text-muted block uppercase">Film Thickness</span>
-                    <span className="text-ink font-medium mt-0.5 block">90–110 Micron with Clear UV Overlaminate</span>
-                  </div>
-                  <div className="p-3.5 bg-surface border border-line">
-                    <span className="font-mono text-[10px] text-muted block uppercase">Finish Suitability</span>
-                    <span className="text-ink font-medium mt-0.5 block">Matte & Gloss Factory OEM Finishes</span>
-                  </div>
-                  <div className="p-3.5 bg-surface border border-line">
-                    <span className="font-mono text-[10px] text-muted block uppercase">Removal</span>
-                    <span className="text-ink font-medium mt-0.5 block">Safe for original paint; residue-free release</span>
-                  </div>
-                </div>
-              )}
-            </div>
           </div>
 
           {/* Right Column: Interactive Configurator (5 cols) */}
