@@ -108,7 +108,7 @@ export const ProductConfigurator: React.FC<ProductConfiguratorProps> = ({ produc
           CONFIGURATION / {product.sku}
         </span>
         <h2 className="font-sans font-medium text-[24px] md:text-[30px] text-ink leading-tight">
-          Graphic. Precise. Yours<span className="text-red">.</span>
+          {product.name}<span className="text-red">.</span>
         </h2>
       </div>
 
@@ -133,50 +133,62 @@ export const ProductConfigurator: React.FC<ProductConfiguratorProps> = ({ produc
         <div className="mt-4 pt-4 border-t border-line/60 space-y-3">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
-              <label className="font-mono text-[10px] text-muted block mb-1.5 uppercase tracking-[0.3px]">
+              <label htmlFor="config-year" className="font-mono text-[10px] text-muted block mb-1.5 uppercase tracking-[0.3px]">
                 01 / YEAR
               </label>
-              <select
-                value={vehicleYear}
-                onChange={(e) => setVehicleYear(e.target.value)}
-                className="w-full h-[44px] px-3 bg-white border border-field text-[13px] font-sans text-ink outline-none focus:border-ink cursor-pointer"
-              >
-                {Array.from({ length: product.yearTo - product.yearFrom + 1 }, (_, i) => product.yearFrom + i).map(
-                  (yr) => (
-                    <option key={yr} value={yr}>
-                      {yr}
-                    </option>
-                  )
-                )}
-              </select>
+              <div className="relative">
+                <select
+                  id="config-year"
+                  value={vehicleYear}
+                  onChange={(e) => setVehicleYear(e.target.value)}
+                  className="w-full h-[46px] px-3.5 pr-10 bg-white border border-field text-[13px] font-sans text-ink appearance-none focus:border-ink outline-none cursor-pointer transition-colors"
+                >
+                  {Array.from({ length: product.yearTo - product.yearFrom + 1 }, (_, i) => product.yearFrom + i).map(
+                    (yr) => (
+                      <option key={yr} value={yr}>
+                        {yr}
+                      </option>
+                    )
+                  )}
+                </select>
+                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3.5 text-muted">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+              </div>
             </div>
             <div>
-              <label className="font-mono text-[10px] text-muted block mb-1.5 uppercase tracking-[0.3px]">
+              <label htmlFor="config-variant" className="font-mono text-[10px] text-muted block mb-1.5 uppercase tracking-[0.3px]">
                 02 / TRIM / VARIANT
               </label>
               {knownVariants.length > 0 ? (
-                <div className="grid grid-cols-2 gap-2 w-full">
-                  {knownVariants.map((v) => (
-                    <button
-                      key={v}
-                      type="button"
-                      onClick={() => setVehicleVariant(v)}
-                      className={`min-h-[44px] h-[44px] px-3 font-mono text-[12px] sm:text-[13px] transition-colors border flex items-center justify-center text-center cursor-pointer ${
-                        vehicleVariant === v
-                          ? 'bg-ink text-white border-ink font-medium'
-                          : 'bg-white text-ink border-field hover:border-ink'
-                      }`}
-                    >
-                      {v}
-                    </button>
-                  ))}
+                <div className="relative">
+                  <select
+                    id="config-variant"
+                    value={vehicleVariant}
+                    onChange={(e) => setVehicleVariant(e.target.value)}
+                    className="w-full h-[46px] px-3.5 pr-10 bg-white border border-field text-[13px] font-sans text-ink appearance-none focus:border-ink outline-none cursor-pointer transition-colors"
+                  >
+                    {knownVariants.map((v) => (
+                      <option key={v} value={v}>
+                        {v}
+                      </option>
+                    ))}
+                  </select>
+                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3.5 text-muted">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
                 </div>
               ) : (
                 <input
                   type="text"
+                  id="config-variant"
                   value={vehicleVariant}
                   onChange={(e) => setVehicleVariant(e.target.value)}
-                  className="w-full h-[44px] px-3 bg-white border border-field text-[13px] font-sans text-ink outline-none focus:border-ink"
+                  className="w-full h-[46px] px-3.5 bg-white border border-field text-[13px] font-sans text-ink outline-none focus:border-ink"
                   placeholder="e.g. Standard"
                 />
               )}
@@ -185,111 +197,117 @@ export const ProductConfigurator: React.FC<ProductConfiguratorProps> = ({ produc
         </div>
       </div>
 
-      {/* 2. Colour Selection (Wrap Livery Colourways) */}
+      {/* 2. Colour Selection (Wrap Livery Colourways — Full-Width Dropdown) */}
       <div>
         <div className="flex items-center justify-between mb-2">
-          <label className="font-mono text-[11px] uppercase tracking-[0.4px] text-muted block">
-            WRAP COLOUR: <span className="text-ink font-medium">{selectedColour}</span>
+          <label htmlFor="config-colour" className="font-mono text-[11px] uppercase tracking-[0.4px] text-muted block">
+            03 / WRAP COLOUR
           </label>
           <span className="font-mono text-[10px] text-muted">LIVERY PALETTE</span>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 w-full">
-          {product.colourOptions.map((c) => (
-            <button
-              key={c}
-              type="button"
-              onClick={() => setSelectedColour(c)}
-              className={`min-h-[44px] h-[44px] px-3 font-mono text-[12px] sm:text-[13px] transition-colors border flex items-center justify-center text-center cursor-pointer ${
-                selectedColour === c
-                  ? 'bg-ink text-white border-ink font-medium'
-                  : 'bg-white text-ink border-field hover:border-ink'
-              }`}
-            >
-              {c}
-            </button>
-          ))}
-          {/* Currently unavailable secondary color variant: kept disabled and greyed out */}
-          <button
-            type="button"
-            disabled
-            className="min-h-[44px] h-[44px] px-3 font-mono text-[11px] sm:text-[12px] border border-line/60 bg-[#f9f9f9] text-muted/50 flex items-center justify-center text-center cursor-not-allowed opacity-60"
-            title="Alternative colour variation launching soon"
+        <div className="relative">
+          <select
+            id="config-colour"
+            value={selectedColour}
+            onChange={(e) => setSelectedColour(e.target.value)}
+            className="w-full h-[46px] px-4 pr-10 bg-white border border-field text-[13px] font-sans text-ink appearance-none focus:border-ink outline-none cursor-pointer transition-colors"
           >
-            <span>Alternate Edition (Coming Soon)</span>
-          </button>
+            {product.colourOptions.map((c) => (
+              <option key={c} value={c}>
+                {c}
+              </option>
+            ))}
+            <option value="alternate-disabled" disabled>
+              Alternate Edition (Coming Soon)
+            </option>
+          </select>
+          <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-muted">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
         </div>
         <span className="font-mono text-[10px] text-muted/80 block mt-1.5">
           Primary production colourway active. Alternative wrap colourways are currently unavailable.
         </span>
       </div>
 
-      {/* 3. Finish Selection */}
+      {/* 3. Finish Selection (Full-Width Dropdown) */}
       <div>
-        <label className="font-mono text-[11px] uppercase tracking-[0.4px] text-muted block mb-2">
-          SURFACE FINISH: <span className="text-ink font-medium">{selectedFinish}</span>
+        <label htmlFor="config-finish" className="font-mono text-[11px] uppercase tracking-[0.4px] text-muted block mb-2">
+          04 / SURFACE FINISH
         </label>
-        <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2 w-full">
-          {product.finishOptions.map((f) => (
-            <button
-              key={f}
-              type="button"
-              onClick={() => setSelectedFinish(f)}
-              className={`min-h-[44px] h-[44px] px-4 font-mono text-[12px] sm:text-[13px] transition-colors border flex items-center justify-center text-center cursor-pointer ${
-                selectedFinish === f
-                  ? 'bg-ink text-white border-ink font-medium'
-                  : 'bg-white text-ink border-field hover:border-ink'
-              }`}
-            >
-              {f}
-            </button>
-          ))}
+        <div className="relative">
+          <select
+            id="config-finish"
+            value={selectedFinish}
+            onChange={(e) => setSelectedFinish(e.target.value)}
+            className="w-full h-[46px] px-4 pr-10 bg-white border border-field text-[13px] font-sans text-ink appearance-none focus:border-ink outline-none cursor-pointer transition-colors"
+          >
+            {product.finishOptions.map((f) => (
+              <option key={f} value={f}>
+                {f} Finish
+              </option>
+            ))}
+          </select>
+          <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-muted">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
         </div>
       </div>
 
-      {/* 4. Coverage Selection */}
+      {/* 4. Coverage Selection (Full-Width Dropdown) */}
       <div>
-        <label className="font-mono text-[11px] uppercase tracking-[0.4px] text-muted block mb-2">
-          WRAP COVERAGE: <span className="text-ink font-medium">{selectedCoverage}</span>
+        <label htmlFor="config-coverage" className="font-mono text-[11px] uppercase tracking-[0.4px] text-muted block mb-2">
+          05 / WRAP COVERAGE
         </label>
-        <div className="grid grid-cols-1 sm:flex sm:flex-wrap gap-2 w-full">
-          {product.coverageOptions.map((cov) => (
-            <button
-              key={cov}
-              type="button"
-              onClick={() => setSelectedCoverage(cov)}
-              className={`min-h-[44px] h-[44px] px-4 font-mono text-[12px] sm:text-[13px] transition-colors border flex items-center justify-center text-center cursor-pointer ${
-                selectedCoverage === cov
-                  ? 'bg-ink text-white border-ink font-medium'
-                  : 'bg-white text-ink border-field hover:border-ink'
-              }`}
-            >
-              {cov}
-            </button>
-          ))}
+        <div className="relative">
+          <select
+            id="config-coverage"
+            value={selectedCoverage}
+            onChange={(e) => setSelectedCoverage(e.target.value)}
+            className="w-full h-[46px] px-4 pr-10 bg-white border border-field text-[13px] font-sans text-ink appearance-none focus:border-ink outline-none cursor-pointer transition-colors"
+          >
+            {product.coverageOptions.map((cov) => (
+              <option key={cov} value={cov}>
+                {cov}
+              </option>
+            ))}
+          </select>
+          <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-muted">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
         </div>
       </div>
 
-      {/* 5. Wheel Size Selection (if decal product) */}
+      {/* 5. Wheel Size Selection (if decal product — Full-Width Dropdown) */}
       {product.wheelSizes && (
         <div>
-          <label className="font-mono text-[11px] uppercase tracking-[0.4px] text-muted block mb-2">
-            WHEEL DIAMETER: <span className="text-ink font-medium">{selectedWheelSize}</span>
+          <label htmlFor="config-wheel" className="font-mono text-[11px] uppercase tracking-[0.4px] text-muted block mb-2">
+            06 / WHEEL DIAMETER
           </label>
-          <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2 w-full">
-            {product.wheelSizes.map((ws) => (
-              <button
-                key={ws}
-                type="button"
-                onClick={() => setSelectedWheelSize(ws)}
-                className={`min-h-[44px] h-[44px] px-4 font-mono text-[12px] sm:text-[13px] transition-colors border flex items-center justify-center text-center cursor-pointer ${
-                  selectedWheelSize === ws
-                    ? 'bg-ink text-white border-ink font-medium'
-                    : 'bg-white text-ink border-field hover:border-ink'
-                }`}
-              >
-                {ws}
-              </button>
-            ))}
+          <div className="relative">
+            <select
+              id="config-wheel"
+              value={selectedWheelSize}
+              onChange={(e) => setSelectedWheelSize(e.target.value)}
+              className="w-full h-[46px] px-4 pr-10 bg-white border border-field text-[13px] font-sans text-ink appearance-none focus:border-ink outline-none cursor-pointer transition-colors"
+            >
+              {product.wheelSizes.map((ws) => (
+                <option key={ws} value={ws}>
+                  {ws}
+                </option>
+              ))}
+            </select>
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-muted">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
           </div>
         </div>
       )}
@@ -310,7 +328,7 @@ export const ProductConfigurator: React.FC<ProductConfiguratorProps> = ({ produc
           Add the finishing touches<span className="text-[#e61919]">.</span>
         </h3>
 
-        {/* 2-Column Responsive Card Grid */}
+        {/* 2-Column Responsive Card Grid — End-to-End Image Fit */}
         <div className="grid grid-cols-2 gap-3">
           {ACCESSORIES.map((acc) => {
             const isSelected = selectedAccessories.some((a) => a.id === acc.id);
@@ -318,27 +336,27 @@ export const ProductConfigurator: React.FC<ProductConfiguratorProps> = ({ produc
               <div
                 key={acc.id}
                 onClick={() => toggleAccessory(acc)}
-                className={`p-3 bg-white border transition-all cursor-pointer flex flex-col justify-between group select-none ${
+                className={`bg-white border transition-all cursor-pointer flex flex-col justify-between group select-none overflow-hidden ${
                   isSelected
                     ? 'border-ink ring-1 ring-ink shadow-sm'
                     : 'border-line hover:border-ink/60'
                 }`}
               >
-                {/* Accessory Artwork in Aspect Box */}
-                <div className="w-full aspect-[4/3] bg-[#f4f4f6] border border-line/60 flex items-center justify-center p-2 mb-2.5 overflow-hidden">
+                {/* Accessory Artwork: End-to-end flush header, 1:1 aspect so full rim fits cleanly */}
+                <div className="w-full aspect-square bg-[#f4f4f6] border-b border-line overflow-hidden relative">
                   <img
                     src={acc.image}
                     alt={acc.name}
-                    className="w-full h-full object-contain filter drop-shadow-sm group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
 
                 {/* Title & Price Row */}
-                <div>
+                <div className="p-3 pt-2.5 flex flex-col justify-between flex-1">
                   <h4 className="font-sans font-medium text-[13px] sm:text-[14px] text-ink leading-tight truncate">
                     {acc.shortName}
                   </h4>
-                  <div className="flex items-center justify-between mt-2.5 pt-1.5 border-t border-line/50">
+                  <div className="flex items-center justify-between mt-2 pt-1.5 border-t border-line/50">
                     <span className="font-mono text-[12px] text-ink font-semibold">
                       + ₹{acc.price.toLocaleString('en-IN')}
                     </span>

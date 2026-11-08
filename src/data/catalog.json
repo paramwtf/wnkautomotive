@@ -286,11 +286,49 @@
     "shortDescription": "Race-bred performance aesthetics inspired by the world’s most demanding hill climb.",
     "description": "Race-bred performance aesthetics inspired by the world’s most demanding hill climb. Engineered for the KTM 390 Adventure chassis with aerodynamic speed lines, high-altitude mountain contour motifs, and durable UV-resistant cast vinyl.",
     "kitContents": "Fairing wrap panels, front beak livery, fuel tank graphics, tail section decals",
-    "cardImage": "/assets/images/ktm/web/ktm-adv390-punisher-02.webp",
+    "cardImage": "/assets/images/ktm/web/ktm-adv390-pikepeak-01.png",
     "galleryImages": [
-      "/assets/images/ktm/web/ktm-adv390-punisher-02.webp"
+      "/assets/images/ktm/web/ktm-adv390-pikepeak-01.png",
+      "/assets/images/ktm/web/ktm-adv390-pikepeak-02.png"
     ],
     "imageAlt": "KTM 390 Adventure Pike Peak Edition wrap",
+    "productionLeadDays": 3,
+    "shippingNotes": "Ships nationwide in reinforced rigid tube"
+  },
+  {
+    "id": 9,
+    "sku": "WNK-BIK-390ADV-MER",
+    "name": "Meridian Edition",
+    "slug": "meridian-edition-ktm-390-adventure",
+    "vehicleType": "Bike",
+    "make": "KTM",
+    "model": "390 Adventure",
+    "yearFrom": 2025,
+    "yearTo": 2026,
+    "variant": "R (2026) / X (2025)",
+    "bodyStyle": "Motorcycle",
+    "coverageOptions": [
+      "Pre-cut wrap"
+    ],
+    "colourOptions": [
+      "Meridian Racing Teal / Matte Black / Solar Orange"
+    ],
+    "finishOptions": [
+      "Matte",
+      "Gloss"
+    ],
+    "priceInr": 6000,
+    "taxIncluded": true,
+    "availability": "None",
+    "shortDescription": "Topographic speed vectors and global expedition livery engineered for the KTM 390 Adventure chassis.",
+    "description": "Contour-mapped expedition aesthetics inspired by longitudinal global adventures. High-durability cast vinyl precision-cut for the KTM 390 Adventure bodywork, featuring topographic speed vectors and UV-stable livery graphics.",
+    "kitContents": "Side tank shrouds, front rally beak livery, tail panels, application squeegee",
+    "cardImage": "/assets/images/ktm/web/ktm-adv390-meridian-01.png",
+    "galleryImages": [
+      "/assets/images/ktm/web/ktm-adv390-meridian-01.png",
+      "/assets/images/ktm/web/ktm-adv390-meridian-02.png"
+    ],
+    "imageAlt": "KTM 390 Adventure Meridian Edition wrap",
     "productionLeadDays": 3,
     "shippingNotes": "Ships nationwide in reinforced rigid tube"
   }

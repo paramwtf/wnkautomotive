@@ -40,32 +40,35 @@ export const AccessoryCard: React.FC<AccessoryCardProps> = ({ accessory }) => {
   };
 
   return (
-    <div className="bg-paper border border-line p-5 sm:p-6 flex flex-col justify-between transition-all hover:border-ink/60 group">
+    <div className="bg-paper border border-line flex flex-col justify-between transition-all hover:border-ink/60 group overflow-hidden">
       <div>
-        <span className="font-mono text-[9px] uppercase tracking-[0.3px] text-muted block mb-3">
-          DECALS & ACCESSORIES
-        </span>
-
-        {/* Product Image Frame */}
-        <div className="w-full aspect-[4/3] bg-[#f4f4f6] border border-line/60 flex items-center justify-center p-3 mb-4 overflow-hidden">
+        {/* Full-bleed end-to-end image header, 1:1 aspect so full rim fits cleanly */}
+        <div className="w-full aspect-square bg-[#f4f4f6] border-b border-line overflow-hidden relative">
           <img
             src={accessory.image}
             alt={accessory.name}
-            className="w-full h-full object-contain filter drop-shadow-sm group-hover:scale-105 transition-transform duration-300"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           />
+          <div className="absolute top-3 left-3 px-2.5 py-0.5 bg-white/90 backdrop-blur-xs border border-line/60 shadow-xs">
+            <span className="font-mono text-[9px] uppercase tracking-[0.3px] text-ink">
+              DECALS & ACCESSORIES
+            </span>
+          </div>
         </div>
 
         {/* Title & Description */}
-        <h3 className="font-sans font-medium text-[17px] sm:text-[18px] text-ink leading-snug mb-1">
-          {accessory.name}
-        </h3>
-        <p className="font-sans text-[12px] text-secondary leading-relaxed mb-4">
-          {accessory.description}
-        </p>
+        <div className="p-5 sm:p-6 pb-2">
+          <h3 className="font-sans font-medium text-[17px] sm:text-[18px] text-ink leading-snug mb-1">
+            {accessory.name}
+          </h3>
+          <p className="font-sans text-[12px] text-secondary leading-relaxed mb-2">
+            {accessory.description}
+          </p>
+        </div>
       </div>
 
       {/* Bottom Price & Add/Remove Control */}
-      <div className="pt-4 border-t border-line flex items-center justify-between gap-3">
+      <div className="p-5 sm:p-6 pt-4 border-t border-line flex items-center justify-between gap-3">
         <div>
           <span className="font-mono text-[10px] text-muted block uppercase">PRICE</span>
           <span className="font-sans font-medium text-[18px] text-ink">

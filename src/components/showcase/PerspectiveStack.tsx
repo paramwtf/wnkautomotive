@@ -13,9 +13,7 @@ export interface ShowcaseProject {
   isDetail?: boolean;
 }
 
-// Strictly the 4 bike projects specified by Yogesh Gurele WNK:
-// Aprilia: Mayhem, Spiderman, Venom
-// KTM 390: Pike Peak
+// Official motorcycle studio builds for Aprilia and KTM:
 export const SHOWCASE_PROJECTS: ShowcaseProject[] = [
   {
     id: 'proj-mayhem',
@@ -55,11 +53,22 @@ export const SHOWCASE_PROJECTS: ShowcaseProject[] = [
     tag: '04 / PIKE PEAK',
     title: 'Pike Peak Edition',
     vehicle: 'KTM / 390 Adventure',
-    image: '/assets/images/ktm/web/ktm-adv390-punisher-01.webp',
-    secondaryImage: '/assets/images/ktm/web/ktm-adv390-punisher-02.webp',
+    image: '/assets/images/ktm/web/ktm-adv390-pikepeak-01.png',
+    secondaryImage: '/assets/images/ktm/web/ktm-adv390-pikepeak-02.png',
     slug: 'pike-peak-edition-ktm-390-adventure',
     description:
       'Race-bred performance aesthetics inspired by the world’s most demanding hill climb, tailored to the KTM 390 Adventure chassis.',
+  },
+  {
+    id: 'proj-meridian',
+    tag: '05 / MERIDIAN',
+    title: 'Meridian Edition',
+    vehicle: 'KTM / 390 Adventure',
+    image: '/assets/images/ktm/web/ktm-adv390-meridian-01.png',
+    secondaryImage: '/assets/images/ktm/web/ktm-adv390-meridian-02.png',
+    slug: 'meridian-edition-ktm-390-adventure',
+    description:
+      'Topographic speed vectors and global expedition livery engineered for the KTM 390 Adventure chassis.',
   },
 ];
 
@@ -94,11 +103,19 @@ const STACK_PANELS = [
     tag: '04 / PIKE PEAK',
     edition: 'PIKE PEAK EDITION',
     project: SHOWCASE_PROJECTS[3],
-    image: '/assets/images/ktm/web/ktm-adv390-punisher-01.webp',
+    image: '/assets/images/ktm/web/ktm-adv390-pikepeak-01.png',
     isDetail: false,
   },
   {
     id: 's-4',
+    tag: '05 / MERIDIAN',
+    edition: 'MERIDIAN EDITION',
+    project: SHOWCASE_PROJECTS[4],
+    image: '/assets/images/ktm/web/ktm-adv390-meridian-01.png',
+    isDetail: false,
+  },
+  {
+    id: 's-5',
     tag: '01 / MAYHEM · DETAIL',
     edition: 'MAYHEM · DETAIL',
     project: SHOWCASE_PROJECTS[0],
@@ -106,7 +123,7 @@ const STACK_PANELS = [
     isDetail: true,
   },
   {
-    id: 's-5',
+    id: 's-6',
     tag: '02 / SPIDERMAN · DETAIL',
     edition: 'SPIDERMAN · DETAIL',
     project: SHOWCASE_PROJECTS[1],
@@ -114,7 +131,7 @@ const STACK_PANELS = [
     isDetail: true,
   },
   {
-    id: 's-6',
+    id: 's-7',
     tag: '03 / VENOM · DETAIL',
     edition: 'VENOM · DETAIL',
     project: SHOWCASE_PROJECTS[2],
@@ -122,11 +139,19 @@ const STACK_PANELS = [
     isDetail: true,
   },
   {
-    id: 's-7',
+    id: 's-8',
     tag: '04 / PIKE PEAK · DETAIL',
     edition: 'PIKE PEAK · DETAIL',
     project: SHOWCASE_PROJECTS[3],
-    image: '/assets/images/ktm/web/ktm-adv390-punisher-02.webp',
+    image: '/assets/images/ktm/web/ktm-adv390-pikepeak-02.png',
+    isDetail: true,
+  },
+  {
+    id: 's-9',
+    tag: '05 / MERIDIAN · DETAIL',
+    edition: 'MERIDIAN · DETAIL',
+    project: SHOWCASE_PROJECTS[4],
+    image: '/assets/images/ktm/web/ktm-adv390-meridian-02.png',
     isDetail: true,
   },
 ];
@@ -383,7 +408,7 @@ export const PerspectiveStack: React.FC = () => {
         </div>
       </div>
 
-      {/* 2. ALL PROJECTS Gallery Section (Mayhem, Spiderman, Venom, Pike Peak) */}
+      {/* 2. ALL PROJECTS Gallery Section (Mayhem, Spiderman, Venom, Pike Peak, Meridian) */}
       <section
         id="all-projects"
         className="w-full border-t border-line py-16 lg:py-20 bg-paper"
@@ -393,7 +418,7 @@ export const PerspectiveStack: React.FC = () => {
             ALL PROJECTS
           </span>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {SHOWCASE_PROJECTS.map((project) => (
               <div
                 key={project.id}

@@ -8,7 +8,7 @@ import { ProductCard } from '../components/common/ProductCard';
 
 export const ProductDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
-  const [activeTab, setActiveTab] = useState<'details' | 'specs' | 'install'>('details');
+  const [activeTab, setActiveTab] = useState<'details' | 'specs'>('details');
 
   if (!slug) {
     return <Navigate to="/shop" replace />;
@@ -93,16 +93,6 @@ export const ProductDetailPage: React.FC = () => {
                 >
                   Specifications
                 </button>
-                <button
-                  onClick={() => setActiveTab('install')}
-                  className={`font-mono text-[12px] uppercase tracking-[0.4px] pb-2 transition-colors ${
-                    activeTab === 'install'
-                      ? 'text-ink font-medium border-b-2 border-ink -mb-[10px]'
-                      : 'text-muted hover:text-ink'
-                  }`}
-                >
-                  Installation & Care
-                </button>
               </div>
 
               {activeTab === 'details' && (
@@ -119,47 +109,22 @@ export const ProductDetailPage: React.FC = () => {
 
               {activeTab === 'specs' && (
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 font-sans text-[14px]">
-                  <div className="p-3 bg-surface border border-line">
+                  <div className="p-3.5 bg-surface border border-line">
                     <span className="font-mono text-[10px] text-muted block uppercase">Material Grade</span>
-                    <span className="text-ink font-medium mt-0.5 block">Dual-Cast Automotive Vinyl</span>
+                    <span className="text-ink font-medium mt-0.5 block">Dual-Cast Premium Automotive Vinyl</span>
                   </div>
-                  <div className="p-3 bg-surface border border-line">
-                    <span className="font-mono text-[10px] text-muted block uppercase">Adhesive Technology</span>
-                    <span className="text-ink font-medium mt-0.5 block">Micro Air-Release Bubble Free</span>
-                  </div>
-                  <div className="p-3 bg-surface border border-line">
+                  <div className="p-3.5 bg-surface border border-line">
                     <span className="font-mono text-[10px] text-muted block uppercase">Film Thickness</span>
-                    <span className="text-ink font-medium mt-0.5 block">90–110 Micron with UV Barrier</span>
+                    <span className="text-ink font-medium mt-0.5 block">90–110 Micron with Clear UV Overlaminate</span>
                   </div>
-                  <div className="p-3 bg-surface border border-line">
-                    <span className="font-mono text-[10px] text-muted block uppercase">Outdoor Durability</span>
-                    <span className="text-ink font-medium mt-0.5 block">3 to 5 Years Outdoor Rated</span>
+                  <div className="p-3.5 bg-surface border border-line">
+                    <span className="font-mono text-[10px] text-muted block uppercase">Finish Suitability</span>
+                    <span className="text-ink font-medium mt-0.5 block">Matte & Gloss Factory OEM Finishes</span>
                   </div>
-                  <div className="p-3 bg-surface border border-line">
-                    <span className="font-mono text-[10px] text-muted block uppercase">Removability</span>
-                    <span className="text-ink font-medium mt-0.5 block">Clean release without paint residue</span>
+                  <div className="p-3.5 bg-surface border border-line">
+                    <span className="font-mono text-[10px] text-muted block uppercase">Removal</span>
+                    <span className="text-ink font-medium mt-0.5 block">Safe for original paint; residue-free release</span>
                   </div>
-                  <div className="p-3 bg-surface border border-line">
-                    <span className="font-mono text-[10px] text-muted block uppercase">Manufacturing Origin</span>
-                    <span className="text-ink font-medium mt-0.5 block">Precision Laser Cut in Pune, India</span>
-                  </div>
-                </div>
-              )}
-
-              {activeTab === 'install' && (
-                <div className="space-y-3 font-sans text-[14px] text-secondary leading-relaxed">
-                  <p>
-                    <strong>Surface Preparation:</strong> Wash panels thoroughly with alcohol-based surface wipe to remove wax, dirt, and road oils.
-                  </p>
-                  <p>
-                    <strong>Application Technique:</strong> Dry application with included felt-edge squeegee. Start from panel center and sweep outward to vent air.
-                  </p>
-                  <p>
-                    <strong>Post-Heat Pass:</strong> Heat vinyl edges to 85°C–90°C using heat gun to eliminate plastic memory at recessed contours.
-                  </p>
-                  <p>
-                    <strong>Wash & Maintenance:</strong> Hand wash with pH-neutral shampoo. Avoid high-pressure water nozzles closer than 18 inches.
-                  </p>
                 </div>
               )}
             </div>
