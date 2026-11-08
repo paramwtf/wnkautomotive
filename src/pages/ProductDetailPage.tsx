@@ -3,6 +3,7 @@ import { useParams, Link, Navigate } from 'react-router-dom';
 import { getProductBySlug, PRODUCTS } from '../data/products';
 import { ProductGallery } from '../components/product/ProductGallery';
 import { ProductConfigurator } from '../components/product/ProductConfigurator';
+import { ProductFeaturesSection } from '../components/product/ProductFeaturesSection';
 import { ProductCard } from '../components/common/ProductCard';
 
 export const ProductDetailPage: React.FC = () => {
@@ -169,6 +170,9 @@ export const ProductDetailPage: React.FC = () => {
             <ProductConfigurator product={product} />
           </div>
         </div>
+
+        {/* Features & Benefits + Installation, Care, Materials & Colour note */}
+        <ProductFeaturesSection />
 
         {/* Related Designs Shelf */}
         {relatedProducts.length > 0 && (

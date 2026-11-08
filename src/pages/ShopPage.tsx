@@ -1,7 +1,9 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { PRODUCTS, CAR_MAKES, BIKE_MAKES, Product } from '../data/products';
+import { ACCESSORIES } from '../data/accessories';
 import { ProductCard } from '../components/common/ProductCard';
+import { AccessoryCard } from '../components/shop/AccessoryCard';
 import { FilterSidebar } from '../components/shop/FilterSidebar';
 import { FilterDrawer } from '../components/shop/FilterDrawer';
 import { VehicleFinder } from '../components/home/VehicleFinder';
@@ -142,6 +144,32 @@ export const ShopPage: React.FC = () => {
       return 0; // default / featured
     });
   }, [selectedVehicleType, selectedWrapType, selectedMake, selectedVehicle.make, selectedVehicle.model, priceRange, searchQuery, sortBy]);
+
+  const isDecalsSelected = selectedWrapType === 'Decals' || selectedVehicleType === 'Universal';
+
+  // Filter accessories based on search, price, and sort
+  const filteredAccessories = useMemo(() => {
+    return ACCESSORIES.filter((acc) => {
+      if (priceRange === 'under-5000' && acc.price >= 5000) return false;
+      if (priceRange === '5000-9000' && (acc.price < 5000 || acc.price > 9000)) return false;
+      if (priceRange === 'above-9000' && acc.price < 9000) return false;
+
+      if (searchQuery.trim()) {
+        const q = searchQuery.toLowerCase().trim();
+        const matches =
+          acc.name.toLowerCase().includes(q) ||
+          acc.description.toLowerCase().includes(q) ||
+          acc.sku.toLowerCase().includes(q);
+        if (!matches) return false;
+      }
+      return true;
+    }).sort((a, b) => {
+      if (sortBy === 'price-asc') return a.price - b.price;
+      if (sortBy === 'price-desc') return b.price - a.price;
+      if (sortBy === 'name-asc') return a.name.localeCompare(b.name);
+      return 0;
+    });
+  }, [priceRange, searchQuery, sortBy]);
 
   const activeFilterCount = [selectedVehicleType, selectedWrapType, selectedMake || selectedVehicle.make, priceRange, selectedVehicle.model].filter(Boolean).length;
 
@@ -315,48 +343,110 @@ export const ShopPage: React.FC = () => {
 
           {/* Product Grid Area */}
           <main className="lg:col-span-9">
-            <div className="flex items-center justify-between mb-4">
-              <span className="font-mono text-[11px] uppercase tracking-[0.4px] text-muted">
-                SHOWING {filteredProducts.length} DESIGNS
-              </span>
-              <span className="font-mono text-[11px] text-muted hidden sm:inline">
-                PUNE STUDIO HANDCRAFTED
-              </span>
-            </div>
-
-            {filteredProducts.length > 0 ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                {filteredProducts.map((product) => (
-                  <ProductCard key={product.id} product={product} />
-                ))}
-              </div>
-            ) : (
-              <div className="py-20 px-6 text-center bg-surface border border-line">
-                <span className="font-mono text-[11px] uppercase tracking-[0.4px] text-muted block mb-2">
-                  NO EXACT MATCH
-                </span>
-                <h3 className="font-sans font-medium text-[24px] text-ink mb-2">
-                  No wraps found matching your criteria<span className="text-red">.</span>
-                </h3>
-                <p className="font-sans text-[15px] text-secondary max-w-md mx-auto mb-6">
-                  Try clearing your filters, or request a bespoke custom wrap designed from scratch for your vehicle.
-                </p>
-                <div className="flex items-center justify-center gap-4">
-                  <button
-                    onClick={handleResetFilters}
-                    className="h-[46px] px-6 bg-white border border-field text-ink font-mono text-[13px] hover:border-ink"
-                  >
-                    Reset Filters
-                  </button>
-                  <a
-                    href="/custom-wrap"
-                    className="h-[46px] px-6 bg-ink text-white font-mono text-[13px] hover:bg-charcoal flex items-center gap-2"
-                  >
-                    <span>Request Custom</span>
-                    <span>→</span>
-                  </a>
+            {isDecalsSelected ? (
+              <>
+                <div className="flex items-center justify-between mb-4">
+                  <span className="font-mono text-[11px] uppercase tracking-[0.4px] text-muted">
+                    SHOWING {filteredAccessories.length} DECALS & ACCESSORIES
+                  </span>
+                  <span className="font-mono text-[11px] text-muted hidden sm:inline">
+                    PRECISION CUT VINYL & ESSENTIALS
+                  </span>
                 </div>
-              </div>
+
+                {filteredAccessories.length > 0 ? (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                    {filteredAccessories.map((acc) => (
+                      <AccessoryCard key={acc.id} accessory={acc} />
+                    ))}
+                  </div>
+                ) : (
+                  <div className="py-20 px-6 text-center bg-surface border border-line">
+                    <span className="font-mono text-[11px] uppercase tracking-[0.4px] text-muted block mb-2">
+                      NO MATCH
+                    </span>
+                    <h3 className="font-sans font-medium text-[24px] text-ink mb-2">
+                      No accessories found matching your criteria<span className="text-red">.</span>
+                    </h3>
+                    <button
+                      onClick={handleResetFilters}
+                      className="mt-4 h-[46px] px-6 bg-white border border-field text-ink font-mono text-[13px] hover:border-ink"
+                    >
+                      Reset Filters
+                    </button>
+                  </div>
+                )}
+              </>
+            ) : (
+              <>
+                <div className="flex items-center justify-between mb-4">
+                  <span className="font-mono text-[11px] uppercase tracking-[0.4px] text-muted">
+                    SHOWING {filteredProducts.length} DESIGNS
+                  </span>
+                  <span className="font-mono text-[11px] text-muted hidden sm:inline">
+                    PUNE STUDIO HANDCRAFTED
+                  </span>
+                </div>
+
+                {filteredProducts.length > 0 ? (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                    {filteredProducts.map((product) => (
+                      <ProductCard key={product.id} product={product} />
+                    ))}
+                  </div>
+                ) : (
+                  <div className="py-20 px-6 text-center bg-surface border border-line">
+                    <span className="font-mono text-[11px] uppercase tracking-[0.4px] text-muted block mb-2">
+                      NO EXACT MATCH
+                    </span>
+                    <h3 className="font-sans font-medium text-[24px] text-ink mb-2">
+                      No wraps found matching your criteria<span className="text-red">.</span>
+                    </h3>
+                    <p className="font-sans text-[15px] text-secondary max-w-md mx-auto mb-6">
+                      Try clearing your filters, or request a bespoke custom wrap designed from scratch for your vehicle.
+                    </p>
+                    <div className="flex items-center justify-center gap-4">
+                      <button
+                        onClick={handleResetFilters}
+                        className="h-[46px] px-6 bg-white border border-field text-ink font-mono text-[13px] hover:border-ink"
+                      >
+                        Reset Filters
+                      </button>
+                      <a
+                        href="/custom-wrap"
+                        className="h-[46px] px-6 bg-ink text-white font-mono text-[13px] hover:bg-charcoal flex items-center gap-2"
+                      >
+                        <span>Request Custom</span>
+                        <span>→</span>
+                      </a>
+                    </div>
+                  </div>
+                )}
+
+                {/* Decals & Accessories section on the main Shop view */}
+                {(!selectedWrapType && !selectedVehicleType && !selectedMake && !selectedVehicle.make && !selectedVehicle.model && !searchQuery) && (
+                  <div className="mt-16 pt-12 border-t border-line">
+                    <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+                      <div>
+                        <span className="font-mono text-[11px] uppercase tracking-[0.4px] text-muted block mb-1">
+                          ADD-ONS & EXTRAS
+                        </span>
+                        <h2 className="font-sans font-medium text-[26px] sm:text-[30px] text-ink tracking-tight">
+                          Decals & Accessories<span className="text-red">.</span>
+                        </h2>
+                      </div>
+                      <p className="font-sans text-[14px] text-secondary max-w-md">
+                        Rim tapes, race numbers, aerodynamic stickers, and wrap maintenance cloths.
+                      </p>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+                      {ACCESSORIES.map((acc) => (
+                        <AccessoryCard key={acc.id} accessory={acc} />
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </>
             )}
           </main>
         </div>
@@ -377,7 +467,7 @@ export const ShopPage: React.FC = () => {
         onReset={handleResetFilters}
         carMakes={CAR_MAKES}
         bikeMakes={BIKE_MAKES}
-        resultCount={filteredProducts.length}
+        resultCount={isDecalsSelected ? filteredAccessories.length : filteredProducts.length}
       />
     </div>
   );

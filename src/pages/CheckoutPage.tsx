@@ -119,9 +119,13 @@ export const CheckoutPage: React.FC = () => {
     const itemsFormatted = items
       .map((item, idx) => {
         const itemLineTotal = item.unitPrice * item.quantity;
+        const addOnsText =
+          item.accessories && item.accessories.length > 0
+            ? `\n   • Finishing Touches: ${item.accessories.map((a) => `${a.name} (+₹${a.price.toLocaleString('en-IN')})`).join(', ')}`
+            : '';
         return `${idx + 1}. *${item.name}* (Qty: ${item.quantity})
    • Vehicle: ${item.vehicleMake} ${item.vehicleModel} ${item.vehicleYear} ${item.vehicleVariant ? `(${item.vehicleVariant})` : ''}
-   • Specs: Color: ${item.colour} | Finish: ${item.finish} | Coverage: ${item.coverage}${item.wheelSize ? ` | Rim: ${item.wheelSize}` : ''}
+   • Specs: Color: ${item.colour} | Finish: ${item.finish} | Coverage: ${item.coverage}${item.wheelSize ? ` | Rim: ${item.wheelSize}` : ''}${addOnsText}
    • Price: ₹${item.unitPrice.toLocaleString('en-IN')} × ${item.quantity} = ₹${itemLineTotal.toLocaleString('en-IN')}`;
       })
       .join('\n\n');
@@ -461,6 +465,11 @@ _Note: This is an order request. Please confirm panel fitment and share UPI / pa
                         <div className="font-mono text-[10px] text-secondary mt-1">
                           {item.colour} • {item.finish} • {item.coverage}
                         </div>
+                        {item.accessories && item.accessories.length > 0 && (
+                          <div className="font-mono text-[10px] text-muted truncate mt-0.5">
+                            + {item.accessories.map((a) => a.name).join(', ')}
+                          </div>
+                        )}
                         <div className="flex items-center justify-between mt-1.5 font-mono text-[12px]">
                           <span className="text-muted">Qty: {item.quantity}</span>
                           <span className="text-ink font-sans font-medium">

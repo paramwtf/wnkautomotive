@@ -39,7 +39,7 @@ export const FilterSidebar: React.FC<FilterSidebarProps> = ({
     { label: 'Full wrap', value: 'Full wrap' },
     { label: 'Partial wrap', value: 'Partial wrap' },
     { label: 'Pre-cut wrap', value: 'Pre-cut wrap' },
-    { label: 'Decals', value: 'Decals' },
+    { label: 'Decals & Accessories', value: 'Decals' },
   ];
 
   const priceRanges = [

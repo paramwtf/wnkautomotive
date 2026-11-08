@@ -1,0 +1,32 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#F4F4F6"/>
+  <!-- Name and number decals -->
+  <g transform="translate(60, 60)">
+    <!-- Shadow -->
+    <rect x="15" y="15" width="250" height="50" rx="4" fill="#000000" opacity="0.06"/>
+    <rect x="25" y="85" width="250" height="75" rx="4" fill="#000000" opacity="0.06"/>
+
+    <!-- Rider Name sticker 1 -->
+    <g transform="skewX(-15)">
+      <text x="30" y="45" font-family="'Archivo', 'Arial Black', sans-serif" font-weight="900" font-size="32" fill="#171717" letter-spacing="2">RIDER</text>
+      <text x="32" y="47" font-family="'Archivo', 'Arial Black', sans-serif" font-weight="900" font-size="32" fill="#FFFFFF" letter-spacing="2">RIDER</text>
+      <text x="30" y="45" font-family="'Archivo', 'Arial Black', sans-serif" font-weight="900" font-size="32" fill="#171717" letter-spacing="2">RIDER</text>
+      <path d="M25 52 L170 52" stroke="#E61919" stroke-width="3"/>
+    </g>
+
+    <!-- Rider Name sticker 2 -->
+    <g transform="translate(140, 20) skewX(-15)">
+      <text x="0" y="45" font-family="'Archivo', 'Arial Black', sans-serif" font-weight="900" font-size="28" fill="#171717" letter-spacing="2">RIDER</text>
+    </g>
+
+    <!-- Numbers "46 46" -->
+    <g transform="translate(30, 80) skewX(-15)">
+      <!-- Number 1 -->
+      <text x="20" y="65" font-family="'Archivo', 'Arial Black', sans-serif" font-weight="900" font-size="58" fill="#E61919" stroke="#171717" stroke-width="5" paint-order="stroke fill">46</text>
+      
+      <!-- Number 2 -->
+      <text x="130" y="65" font-family="'Archivo', 'Arial Black', sans-serif" font-weight="900" font-size="58" fill="#E61919" stroke="#171717" stroke-width="5" paint-order="stroke fill">46</text>
+    </g>
+  </g>
+</svg>
+

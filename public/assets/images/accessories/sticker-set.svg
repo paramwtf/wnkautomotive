@@ -1,0 +1,29 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#F4F4F6"/>
+  <!-- Angled Sticker Sheet with chevron / sponsor decals -->
+  <g transform="translate(70, 45)">
+    <!-- Sheet drop shadow -->
+    <polygon points="15,225 245,260 270,45 40,10" fill="#000000" opacity="0.08"/>
+    
+    <!-- White decal sheet -->
+    <polygon points="10,215 240,250 265,35 35,0" fill="#FFFFFF" stroke="#E2E2E0" stroke-width="1.5"/>
+
+    <!-- Geometric racing arrow decals -->
+    <g transform="rotate(7, 130, 120)">
+      <!-- Chevron stripes Red/Black -->
+      <polygon points="40,40 160,50 145,70 25,60" fill="#E61919"/>
+      <polygon points="50,65 170,75 155,95 35,85" fill="#171717"/>
+      <polygon points="60,90 180,100 165,115 45,105" fill="#737373"/>
+
+      <!-- Accent triangles -->
+      <polygon points="50,130 90,135 70,165" fill="#E61919"/>
+      <polygon points="100,140 140,145 120,175" fill="#171717"/>
+      <polygon points="150,150 190,155 170,185" fill="#171717"/>
+
+      <!-- Mini sponsor logos / hashes -->
+      <rect x="50" y="180" width="60" height="12" fill="#171717" transform="skewX(-20)"/>
+      <rect x="120" y="180" width="50" height="12" fill="#E61919" transform="skewX(-20)"/>
+    </g>
+  </g>
+</svg>
+

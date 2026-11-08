@@ -35,10 +35,14 @@ export const ConfirmationPage: React.FC = () => {
     if (!order) return;
     const itemsFormatted = order.items
       .map(
-        (item, idx) =>
-          `${idx + 1}. *${item.name}* (Qty: ${item.quantity}) - ₹${(
+        (item, idx) => {
+          const addOns = item.accessories && item.accessories.length > 0
+            ? ` [Add-ons: ${item.accessories.map((a) => a.name).join(', ')}]`
+            : '';
+          return `${idx + 1}. *${item.name}* (Qty: ${item.quantity})${addOns} - ₹${(
             item.unitPrice * item.quantity
-          ).toLocaleString('en-IN')}`
+          ).toLocaleString('en-IN')}`;
+        }
       )
       .join('\n');
 

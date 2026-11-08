@@ -38,18 +38,23 @@ export const FaqAccordion: React.FC<FaqAccordionProps> = ({ items, className = '
                 {item.question}
               </h3>
               <div
-                className={`w-7 h-7 shrink-0 rounded-none border border-line bg-white flex items-center justify-center transition-transform duration-300 ${
-                  isOpen ? 'rotate-180 bg-ink text-white border-ink' : 'text-ink'
+                className={`w-8 h-8 shrink-0 rounded-none border border-line bg-white flex items-center justify-center transition-all duration-300 shadow-sm ${
+                  isOpen ? 'border-ink bg-surface' : 'hover:border-ink'
                 }`}
               >
                 <svg
-                  width="12"
-                  height="12"
+                  width="14"
+                  height="14"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="square"
+                  stroke="#171717"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className={`transition-transform duration-300 text-ink ${
+                    isOpen ? 'rotate-180' : 'rotate-0'
+                  }`}
+                  aria-hidden="true"
                 >
                   <polyline points="6 9 12 15 18 9" />
                 </svg>

@@ -126,10 +126,7 @@ export const Footer: React.FC = () => {
         <div className="w-full my-10 sm:my-16 lg:my-20 overflow-hidden flex items-baseline">
           <h2 className="font-sans font-black text-[11.2vw] sm:text-[11.8vw] lg:text-[12.2vw] tracking-[-0.04em] leading-[0.85] text-ink select-none whitespace-nowrap flex items-baseline">
             <span>BE UNIQUE</span>
-            <span
-              className="inline-block bg-[#e61919] w-[0.14em] h-[0.14em] ml-[0.06em] flex-shrink-0"
-              aria-hidden="true"
-            />
+            <span className="text-[#e61919] ml-[0.02em]">.</span>
           </h2>
         </div>
 

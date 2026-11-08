@@ -55,7 +55,8 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }, [couponCode]);
 
   const addToCart = (newItem: Omit<CartItem, 'id'>) => {
-    const id = `${newItem.sku}-${newItem.colour}-${newItem.finish}-${newItem.coverage}-${newItem.wheelSize || 'none'}`;
+    const accKey = (newItem.accessories || []).map((a) => a.id).sort().join(',');
+    const id = `${newItem.sku}-${newItem.colour}-${newItem.finish}-${newItem.coverage}-${newItem.wheelSize || 'none'}${accKey ? `-${accKey}` : ''}`;
     setItems((prev) => {
       const existingIndex = prev.findIndex((i) => i.id === id);
       if (existingIndex > -1) {

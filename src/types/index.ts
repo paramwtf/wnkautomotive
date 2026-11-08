@@ -12,6 +12,7 @@ export interface CartItem {
   finish: string;
   coverage: string;
   wheelSize?: string;
+  accessories?: { id: string; name: string; price: number }[];
   unitPrice: number;
   quantity: number;
   image: string;

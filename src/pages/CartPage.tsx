@@ -172,6 +172,25 @@ export const CartPage: React.FC = () => {
                               </span>
                             )}
                           </div>
+
+                          {/* Selected Finishing Touches / Accessories */}
+                          {item.accessories && item.accessories.length > 0 && (
+                            <div className="mt-2.5 pt-2 border-t border-line/60">
+                              <span className="font-mono text-[10px] uppercase text-muted tracking-wider block mb-1">
+                                ADD-ONS / FINISHING TOUCHES:
+                              </span>
+                              <div className="flex flex-wrap gap-1.5">
+                                {item.accessories.map((acc) => (
+                                  <span
+                                    key={acc.id}
+                                    className="px-2 py-0.5 bg-white border border-field font-mono text-[11px] text-ink"
+                                  >
+                                    + {acc.name} (₹{acc.price.toLocaleString('en-IN')})
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+                          )}
                         </div>
 
                         {/* Price & Quantity Controls */}
