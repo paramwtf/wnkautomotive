@@ -134,7 +134,7 @@ export const ProductConfigurator: React.FC<ProductConfiguratorProps> = ({ produc
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <label htmlFor="config-year" className="font-mono text-[10px] text-muted block mb-1.5 uppercase tracking-[0.3px]">
-                01 / YEAR
+                YEAR
               </label>
               <div className="relative">
                 <select
@@ -160,7 +160,7 @@ export const ProductConfigurator: React.FC<ProductConfiguratorProps> = ({ produc
             </div>
             <div>
               <label htmlFor="config-variant" className="font-mono text-[10px] text-muted block mb-1.5 uppercase tracking-[0.3px]">
-                02 / TRIM / VARIANT
+                TRIM / VARIANT
               </label>
               {knownVariants.length > 0 ? (
                 <div className="relative">
@@ -201,7 +201,7 @@ export const ProductConfigurator: React.FC<ProductConfiguratorProps> = ({ produc
       <div>
         <div className="flex items-center justify-between mb-2">
           <label htmlFor="config-colour" className="font-mono text-[11px] uppercase tracking-[0.4px] text-muted block">
-            03 / WRAP COLOUR
+            WRAP COLOUR
           </label>
           <span className="font-mono text-[10px] text-muted">LIVERY PALETTE</span>
         </div>
@@ -232,7 +232,7 @@ export const ProductConfigurator: React.FC<ProductConfiguratorProps> = ({ produc
       {/* 3. Finish Selection (Full-Width Dropdown) */}
       <div>
         <label htmlFor="config-finish" className="font-mono text-[11px] uppercase tracking-[0.4px] text-muted block mb-2">
-          04 / SURFACE FINISH
+          SURFACE FINISH
         </label>
         <div className="relative">
           <select
@@ -258,7 +258,7 @@ export const ProductConfigurator: React.FC<ProductConfiguratorProps> = ({ produc
       {/* 4. Coverage Selection (Full-Width Dropdown) */}
       <div>
         <label htmlFor="config-coverage" className="font-mono text-[11px] uppercase tracking-[0.4px] text-muted block mb-2">
-          05 / WRAP COVERAGE
+          WRAP COVERAGE
         </label>
         <div className="relative">
           <select
@@ -285,7 +285,7 @@ export const ProductConfigurator: React.FC<ProductConfiguratorProps> = ({ produc
       {product.wheelSizes && (
         <div>
           <label htmlFor="config-wheel" className="font-mono text-[11px] uppercase tracking-[0.4px] text-muted block mb-2">
-            06 / WHEEL DIAMETER
+            WHEEL DIAMETER
           </label>
           <div className="relative">
             <select

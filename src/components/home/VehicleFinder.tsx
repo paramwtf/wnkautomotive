@@ -65,7 +65,7 @@ export const VehicleFinder: React.FC<VehicleFinderProps> = ({ className = '' }) 
         {/* Make Selector */}
         <div className="flex flex-col">
           <label className="font-mono text-[11px] uppercase tracking-[0.3px] text-muted mb-1.5">
-            01 / Make
+            Make
           </label>
           <select
             value={selectedVehicle.make}
@@ -93,7 +93,7 @@ export const VehicleFinder: React.FC<VehicleFinderProps> = ({ className = '' }) 
         {/* Model Selector */}
         <div className="flex flex-col">
           <label className="font-mono text-[11px] uppercase tracking-[0.3px] text-muted mb-1.5">
-            02 / Model
+            Model
           </label>
           <select
             value={selectedVehicle.model}
@@ -113,7 +113,7 @@ export const VehicleFinder: React.FC<VehicleFinderProps> = ({ className = '' }) 
         {/* Year Selector */}
         <div className="flex flex-col">
           <label className="font-mono text-[11px] uppercase tracking-[0.3px] text-muted mb-1.5">
-            03 / Year
+            Year
           </label>
           <select
             value={selectedVehicle.year}
@@ -133,7 +133,7 @@ export const VehicleFinder: React.FC<VehicleFinderProps> = ({ className = '' }) 
         {/* Variant Selector */}
         <div className="flex flex-col">
           <label className="font-mono text-[11px] uppercase tracking-[0.3px] text-muted mb-1.5">
-            04 / Variant
+            Variant
           </label>
           <select
             value={selectedVehicle.variant}

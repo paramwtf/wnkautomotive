@@ -31,11 +31,6 @@ export const ProductGallery: React.FC<ProductGalleryProps> = ({ images, alt }) =
           alt={alt}
           className="size-full object-cover object-center transition-opacity duration-300"
         />
-        <div className="absolute top-4 left-4 bg-paper/90 backdrop-blur-sm border border-line px-3 py-1">
-          <span className="font-mono text-[10px] uppercase tracking-[0.4px] text-ink">
-            {activeImageIndex === 2 ? 'STUDIO ANGLED VIEW • COMMON' : 'PHOTOGRAPHY / STUDIO PUNE'}
-          </span>
-        </div>
       </div>
 
       {/* Thumbnail Track - Always 3 synchronized thumbnails */}

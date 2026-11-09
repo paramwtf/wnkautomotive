@@ -35,17 +35,17 @@ export const HomePage: React.FC = () => {
           <p className="font-sans text-[16px] sm:text-[18px] text-secondary leading-[1.4] mb-8">
             Choose a ready-made wrap or create a custom design<br className="hidden sm:inline" /> for your car or bike.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto">
             <Link
               to="/shop"
-              className="h-[52px] px-7 bg-[#010101] text-white font-sans text-[14px] font-medium hover:bg-charcoal transition-colors flex items-center justify-center gap-2"
+              className="w-full sm:w-[220px] h-[52px] px-6 bg-[#010101] text-white font-sans text-[14px] font-medium hover:bg-charcoal transition-colors flex items-center justify-center gap-2 shrink-0 text-center"
             >
               <span>Explore the shop</span>
               <span className="font-mono">→</span>
             </Link>
             <Link
               to="/custom-wrap"
-              className="h-[52px] px-7 bg-white text-[#010101] border border-[#cecece] font-sans text-[14px] font-medium hover:border-ink transition-colors flex items-center justify-center gap-2"
+              className="w-full sm:w-[220px] h-[52px] px-6 bg-white text-[#010101] border border-[#cecece] font-sans text-[14px] font-medium hover:border-ink transition-colors flex items-center justify-center gap-2 shrink-0 text-center"
             >
               <span>Create a custom wrap</span>
               <span className="font-mono">→</span>
