@@ -82,6 +82,7 @@ export const ShopPage: React.FC = () => {
   };
 
   const handleResetFilters = () => {
+    clearVehicle();
     setSelectedVehicleType('');
     setSelectedWrapType('');
     setSelectedMake('');

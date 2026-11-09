@@ -363,6 +363,191 @@ export const PRODUCTS: Product[] = [
     "imageAlt": "KTM 390 Adventure Meridian Edition wrap",
     "productionLeadDays": 3,
     "shippingNotes": "Ships nationwide in reinforced rigid tube"
+  },
+  {
+    "id": 10,
+    "sku": "WNK-BIK-F450GS-RDB",
+    "name": "Red Bull Edition",
+    "slug": "red-bull-edition-bmw-f450gs",
+    "vehicleType": "Bike",
+    "make": "BMW",
+    "model": "F 450 GS",
+    "yearFrom": 2026,
+    "yearTo": 2026,
+    "variant": "Base, Exclusive, GS Trophy",
+    "bodyStyle": "Motorcycle",
+    "coverageOptions": [
+      "Pre-cut wrap"
+    ],
+    "colourOptions": [
+      "Red / Blue / Grey Rallye Accent"
+    ],
+    "finishOptions": [
+      "Matte",
+      "Gloss"
+    ],
+    "priceInr": 6000,
+    "taxIncluded": true,
+    "availability": "None",
+    "shortDescription": "A charging bull graphic with red, blue and grey accents gives the BMW F 450 GS a rally-inspired look.",
+    "description": "A charging bull graphic with red, blue and grey accents gives the BMW F 450 GS a rally-inspired look. Engineered specifically for the adventure beak and sculpted tank flanks of the BMW F 450 GS using premium UV-resistant cast vinyl.",
+    "kitContents": "Beak accent graphics, fuel tank livery wrap, side fairing decals, rear quarter graphics, squeegee",
+    "cardImage": "/assets/images/bmw/f450gs/bmw-f450gs-redbull-01.png",
+    "galleryImages": [
+      "/assets/images/bmw/f450gs/bmw-f450gs-redbull-01.png",
+      "/assets/images/bmw/f450gs/bmw-f450gs-redbull-02.png"
+    ],
+    "imageAlt": "BMW F 450 GS Red Bull Edition wrap",
+    "productionLeadDays": 3,
+    "shippingNotes": "Ships nationwide in reinforced rigid tube"
+  },
+  {
+    "id": 11,
+    "sku": "WNK-BIK-F450GS-HRN",
+    "name": "Hornet Edition",
+    "slug": "hornet-edition-bmw-f450gs",
+    "vehicleType": "Bike",
+    "make": "BMW",
+    "model": "F 450 GS",
+    "yearFrom": 2026,
+    "yearTo": 2026,
+    "variant": "Base, Exclusive, GS Trophy",
+    "bodyStyle": "Motorcycle",
+    "coverageOptions": [
+      "Pre-cut wrap"
+    ],
+    "colourOptions": [
+      "Neon Yellow / Stealth Dark Base"
+    ],
+    "finishOptions": [
+      "Matte",
+      "Gloss"
+    ],
+    "priceInr": 6000,
+    "taxIncluded": true,
+    "availability": "None",
+    "shortDescription": "Neon-yellow graphics on a dark base give the BMW F 450 GS a rally-inspired look.",
+    "description": "Neon-yellow graphics on a dark base give the BMW F 450 GS a rally-inspired look. High-contrast fluorescent speed accents contoured to the F 450 GS chassis lines for maximum trail visibility.",
+    "kitContents": "Front beak mask, fuel tank shrouds, side panel graphics, rear tail accents, installation squeegee",
+    "cardImage": "/assets/images/bmw/f450gs/bmw-f450gs-hornet-01.png",
+    "galleryImages": [
+      "/assets/images/bmw/f450gs/bmw-f450gs-hornet-01.png",
+      "/assets/images/bmw/f450gs/bmw-f450gs-hornet-02.png"
+    ],
+    "imageAlt": "BMW F 450 GS Hornet Edition wrap",
+    "productionLeadDays": 3,
+    "shippingNotes": "Ships nationwide in reinforced rigid tube"
+  },
+  {
+    "id": 12,
+    "sku": "WNK-BIK-F450GS-DYN",
+    "name": "GS Dynamic Edition",
+    "slug": "gs-dynamic-edition-bmw-f450gs",
+    "vehicleType": "Bike",
+    "make": "BMW",
+    "model": "F 450 GS",
+    "yearFrom": 2026,
+    "yearTo": 2026,
+    "variant": "Base, Exclusive, GS Trophy",
+    "bodyStyle": "Motorcycle",
+    "coverageOptions": [
+      "Pre-cut wrap"
+    ],
+    "colourOptions": [
+      "M-Motorsport Cyan / Blue / Racing Red"
+    ],
+    "finishOptions": [
+      "Matte",
+      "Gloss"
+    ],
+    "priceInr": 6000,
+    "taxIncluded": true,
+    "availability": "None",
+    "shortDescription": "M-inspired red and blue accents give the BMW F 450 GS a bold adventure-rally look.",
+    "description": "M-inspired red and blue accents give the BMW F 450 GS a bold adventure-rally look. Precision-patterned racing tricolour vectors that accentuate the athletic geometry of the F 450 GS.",
+    "kitContents": "Tricolour beak stripes, side tank fairing graphics, subframe accents, application squeegee",
+    "cardImage": "/assets/images/bmw/f450gs/bmw-f450gs-gsdynamic-01.png",
+    "galleryImages": [
+      "/assets/images/bmw/f450gs/bmw-f450gs-gsdynamic-01.png",
+      "/assets/images/bmw/f450gs/bmw-f450gs-gsdynamic-02.png"
+    ],
+    "imageAlt": "BMW F 450 GS GS Dynamic Edition wrap",
+    "productionLeadDays": 3,
+    "shippingNotes": "Ships nationwide in reinforced rigid tube"
+  },
+  {
+    "id": 13,
+    "sku": "WNK-BIK-F450GS-TPG",
+    "name": "Top Gun Edition",
+    "slug": "top-gun-edition-bmw-f450gs",
+    "vehicleType": "Bike",
+    "make": "BMW",
+    "model": "F 450 GS",
+    "yearFrom": 2026,
+    "yearTo": 2026,
+    "variant": "Base, Exclusive, GS Trophy",
+    "bodyStyle": "Motorcycle",
+    "coverageOptions": [
+      "Pre-cut wrap"
+    ],
+    "colourOptions": [
+      "Olive Green / Tactical Star Insignia"
+    ],
+    "finishOptions": [
+      "Matte",
+      "Gloss"
+    ],
+    "priceInr": 6000,
+    "taxIncluded": true,
+    "availability": "None",
+    "shortDescription": "Olive-green military graphics and star insignia give the BMW F 450 GS an aviation-inspired look.",
+    "description": "Olive-green military graphics and star insignia give the BMW F 450 GS an aviation-inspired look. Matte military olive drab with naval aviation star insignias and stencil vector accents.",
+    "kitContents": "Military star tank wraps, olive beak cowl graphics, flank numbering, application squeegee",
+    "cardImage": "/assets/images/bmw/f450gs/bmw-f450gs-topgun-01.png",
+    "galleryImages": [
+      "/assets/images/bmw/f450gs/bmw-f450gs-topgun-01.png",
+      "/assets/images/bmw/f450gs/bmw-f450gs-topgun-02.png"
+    ],
+    "imageAlt": "BMW F 450 GS Top Gun Edition wrap",
+    "productionLeadDays": 3,
+    "shippingNotes": "Ships nationwide in reinforced rigid tube"
+  },
+  {
+    "id": 14,
+    "sku": "WNK-BIK-F450GS-EXP",
+    "name": "Explore Edition",
+    "slug": "explore-edition-bmw-f450gs",
+    "vehicleType": "Bike",
+    "make": "BMW",
+    "model": "F 450 GS",
+    "yearFrom": 2026,
+    "yearTo": 2026,
+    "variant": "Base, Exclusive, GS Trophy",
+    "bodyStyle": "Motorcycle",
+    "coverageOptions": [
+      "Pre-cut wrap"
+    ],
+    "colourOptions": [
+      "Pale Camouflage / Topographic Cartography"
+    ],
+    "finishOptions": [
+      "Matte",
+      "Gloss"
+    ],
+    "priceInr": 6000,
+    "taxIncluded": true,
+    "availability": "None",
+    "shortDescription": "Pale camouflage and map-inspired graphics give the BMW F 450 GS an expedition-ready look.",
+    "description": "Pale camouflage and map-inspired graphics give the BMW F 450 GS an expedition-ready look. Subtle desert topo lines and pale geometric camo patterns designed for long-distance rally touring.",
+    "kitContents": "Topographic tank shrouds, camouflage beak panels, rear luggage flank graphics, squeegee",
+    "cardImage": "/assets/images/bmw/f450gs/bmw-f450gs-explore-01.png",
+    "galleryImages": [
+      "/assets/images/bmw/f450gs/bmw-f450gs-explore-01.png",
+      "/assets/images/bmw/f450gs/bmw-f450gs-explore-02.png"
+    ],
+    "imageAlt": "BMW F 450 GS Explore Edition wrap",
+    "productionLeadDays": 3,
+    "shippingNotes": "Ships nationwide in reinforced rigid tube"
   }
 ];
 

@@ -21,8 +21,14 @@ export const ProductConfigurator: React.FC<ProductConfiguratorProps> = ({ produc
     const modelObj = makeObj?.models.find(
       (m) => m.name.toLowerCase() === product.model.toLowerCase()
     );
-    return modelObj?.variants || [];
-  }, [product.make, product.model]);
+    if (modelObj?.variants && modelObj.variants.length > 0) {
+      return modelObj.variants;
+    }
+    if (product.variant) {
+      return product.variant.split(/[,/]/).map((s) => s.trim()).filter(Boolean);
+    }
+    return [];
+  }, [product.make, product.model, product.variant]);
 
   // Initial options
   const [selectedColour, setSelectedColour] = useState(product.colourOptions[0] || 'Primary Livery');
@@ -114,20 +120,14 @@ export const ProductConfigurator: React.FC<ProductConfiguratorProps> = ({ produc
 
       {/* 1. Vehicle Fitment Notice & Callout */}
       <div className="p-4 bg-surface border border-line">
-        <div className="flex items-center justify-between mb-1">
+        <div className="mb-1">
           <span className="font-mono text-[10px] uppercase tracking-[0.4px] text-muted">
             TARGET VEHICLE FITMENT
-          </span>
-          <span className="font-mono text-[10px] text-ink bg-white px-2 py-0.5 border border-line">
-            CAD MATCHED
           </span>
         </div>
         <div className="font-sans font-medium text-[16px] text-ink">
           {product.make} {product.model} ({product.yearFrom}–{product.yearTo})
         </div>
-        <p className="font-sans text-[12px] text-secondary mt-1">
-          Precision laser-cut specifically for this vehicle. Final fitment guaranteed by WNK.
-        </p>
 
         {/* Variant selection */}
         <div className="mt-4 pt-4 border-t border-line/60 space-y-3">
@@ -227,9 +227,6 @@ export const ProductConfigurator: React.FC<ProductConfiguratorProps> = ({ produc
             </svg>
           </div>
         </div>
-        <span className="font-mono text-[10px] text-muted/80 block mt-1.5">
-          Primary production colourway active. Alternative wrap colourways are currently unavailable.
-        </span>
       </div>
 
       {/* 3. Finish Selection (Full-Width Dropdown) */}
@@ -389,17 +386,10 @@ export const ProductConfigurator: React.FC<ProductConfiguratorProps> = ({ produc
           <span className="font-sans font-medium text-[32px] text-ink tracking-tight">
             ₹{finalTotalPrice.toLocaleString('en-IN')}
           </span>
-          <span className="font-mono text-[11px] text-muted uppercase">
-            GST & TAX INCLUDED
-          </span>
         </div>
-        {selectedAccessories.length > 0 ? (
+        {selectedAccessories.length > 0 && (
           <p className="font-mono text-[11px] text-muted mt-1">
-            Base livery: ₹{calculatedBasePrice.toLocaleString('en-IN')} + Add-ons: ₹{accessoriesTotal.toLocaleString('en-IN')} • FREE SHIPPING
-          </p>
-        ) : (
-          <p className="font-mono text-[11px] text-muted mt-1">
-            SAMPLE PRICE / AWAITING WNK APPROVAL • FREE NATIONWIDE SHIPPING
+            Base livery: ₹{calculatedBasePrice.toLocaleString('en-IN')} + Add-ons: ₹{accessoriesTotal.toLocaleString('en-IN')}
           </p>
         )}
       </div>
@@ -435,13 +425,6 @@ export const ProductConfigurator: React.FC<ProductConfiguratorProps> = ({ produc
             </Link>
           </div>
         )}
-      </div>
-
-      {/* Kit Contents & Production Note */}
-      <div className="pt-4 border-t border-line text-[12px] font-mono text-muted space-y-1">
-        <p>• Lead Time: {product.productionLeadDays} business days handcrafted in Pune</p>
-        <p>• Kit contents: {product.kitContents}</p>
-        <p>• {product.shippingNotes}</p>
       </div>
     </div>
   );

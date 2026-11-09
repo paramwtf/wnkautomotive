@@ -52,7 +52,7 @@ export const ProductFeaturesSection: React.FC = () => {
             </div>
           </div>
 
-          {/* 2. Scratch Resistant */}
+          {/* 2. Easy Application */}
           <div className="flex items-center gap-4 text-left">
             <div className="w-14 h-14 sm:w-16 sm:h-16 shrink-0 border border-white/20 bg-white/[0.04] flex items-center justify-center">
               <svg
@@ -63,15 +63,18 @@ export const ProductFeaturesSection: React.FC = () => {
                 strokeLinecap="round"
                 strokeLinejoin="round"
               >
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="m14 7 3-3 4 4-3 3" />
+                <path d="m11 10-6.5 6.5a2.12 2.12 0 0 0 3 3L14 13" />
+                <path d="M4 20l4-4" />
+                <path d="M15 6l3 3" />
               </svg>
             </div>
             <div>
               <span className="font-sans font-medium text-[16px] sm:text-[17px] text-white leading-tight block">
-                Scratch Resistant
+                Easy Application
               </span>
               <span className="font-mono text-[11px] text-white/50 block mt-0.5">
-                Cast protective barrier
+                Bubble-free dry install
               </span>
             </div>
           </div>
@@ -102,53 +105,55 @@ export const ProductFeaturesSection: React.FC = () => {
             </div>
           </div>
         </div>
+
+        {/* Asterisk Conditions Apply in lower-right of black box */}
+        <div className="mt-5 pt-3 border-t border-white/10 text-right">
+          <span className="font-mono text-[10px] text-white/50 tracking-wider">
+            *Conditions apply
+          </span>
+        </div>
       </div>
 
-      {/* Editorial Information: Installation, Care, Materials & Colour Note */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-14 pt-4">
-        {/* Left Column: Installation & Care */}
-        <div className="space-y-8">
-          <div>
-            <h4 className="font-sans font-medium text-[16px] sm:text-[17px] text-ink mb-2">
-              Installation
-            </h4>
-            <p className="font-sans text-[14px] text-secondary leading-relaxed">
-              Apply to a clean, dry surface free from wax and grease. Professional installation is recommended. Check surface suitability before applying over PPF, ceramic coating or repainted panels.
-            </p>
-          </div>
-
-          <div>
-            <h4 className="font-sans font-medium text-[16px] sm:text-[17px] text-ink mb-2">
-              Care
-            </h4>
-            <p className="font-sans text-[14px] text-secondary leading-relaxed">
-              Wash gently with mild vehicle shampoo and a soft cloth. Avoid harsh solvents, abrasive cleaners and pressure-washer jets directed at the edges.
-            </p>
-          </div>
+      {/* Editorial Information: Installation, Materials, Care & Colour Note */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 lg:gap-x-14 gap-y-8 pt-4">
+        {/* Row 1 Col 1: Installation */}
+        <div>
+          <h4 className="font-sans font-medium text-[16px] sm:text-[17px] text-ink mb-2">
+            Installation
+          </h4>
+          <p className="font-sans text-[14px] text-secondary leading-relaxed">
+            Apply to a clean, dry surface free from wax and grease. Professional installation is recommended. Check surface suitability before applying over PPF, ceramic coating or repainted panels.
+          </p>
         </div>
 
-        {/* Right Column: Materials & Colour note */}
-        <div className="space-y-8">
-          <div>
-            <h4 className="font-sans font-medium text-[16px] sm:text-[17px] text-ink mb-2">
-              Materials
-            </h4>
-            <p className="font-sans text-[14px] text-secondary leading-relaxed mb-3">
-              We use high-quality cast films from brands including Arlon, Avery, 3M and Hexis. Material is selected to suit the design and application.
-            </p>
-            <p className="font-sans text-[14px] text-secondary leading-relaxed">
-              Quality films help deliver clear print detail, consistent colour and a smooth finish.
-            </p>
-          </div>
+        {/* Row 1 Col 2: Materials */}
+        <div>
+          <h4 className="font-sans font-medium text-[16px] sm:text-[17px] text-ink mb-2">
+            Materials
+          </h4>
+          <p className="font-sans text-[14px] text-secondary leading-relaxed">
+            We use high-quality cast films from brands including Arlon, Avery, 3M and Starcast. Material is selected to suit the design and application.
+          </p>
+        </div>
 
-          <div>
-            <h4 className="font-sans font-medium text-[16px] sm:text-[17px] text-ink mb-2">
-              Colour note
-            </h4>
-            <p className="font-sans text-[14px] text-secondary leading-relaxed">
-              Printed colours may vary slightly from your screen and with lighting, finish and the vehicle's base colour.
-            </p>
-          </div>
+        {/* Row 2 Col 1: Care */}
+        <div className="pt-1 md:pt-3">
+          <h4 className="font-sans font-medium text-[16px] sm:text-[17px] text-ink mb-2">
+            Care
+          </h4>
+          <p className="font-sans text-[14px] text-secondary leading-relaxed">
+            Wash gently with mild vehicle shampoo and a soft cloth. Avoid harsh solvents, abrasive cleaners and pressure-washer jets directed at the edges.
+          </p>
+        </div>
+
+        {/* Row 2 Col 2: Colour note */}
+        <div className="pt-1 md:pt-3">
+          <h4 className="font-sans font-medium text-[16px] sm:text-[17px] text-ink mb-2">
+            Colour note
+          </h4>
+          <p className="font-sans text-[14px] text-secondary leading-relaxed">
+            Printed colours may vary slightly from your screen and with lighting, finish and the vehicle's base colour.
+          </p>
         </div>
       </div>
     </div>

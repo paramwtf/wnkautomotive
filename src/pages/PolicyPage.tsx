@@ -17,29 +17,19 @@ const POLICIES: Record<string, PolicyContent> = {
       {
         heading: 'Nationwide Delivery Coverage',
         content: [
-          'WNK Automotive delivers to over 26,000 PIN codes across India through our premium logistics partners including Blue Dart, Delhivery, and DTDC.',
-          'Standard shipping on all pre-cut wrap kits and decals is complimentary (Free Shipping) nationwide.',
+          'WNK Automotive delivers to over 26,000 PIN codes across India.',
         ],
       },
       {
         heading: 'Packaging Standards',
         content: [
           'Automotive vinyl cannot be folded. All WNK kits are wound onto smooth protective liners and packaged inside heavy-duty, reinforced rigid cylindrical mailing tubes with impact-resistant end caps.',
-          'Kits include micro-squeegees and application guides sealed within airtight poly envelopes inside the tube.',
         ],
       },
       {
         heading: 'Production & Dispatch Timelines',
         content: [
-          'Pre-cut catalogue kits are precision-cut and packaged within 2 to 3 business days from order confirmation.',
-          'Custom bespoke wraps and livery modifications require 4 to 6 business days for vector proofing and high-resolution print cure before dispatch.',
-          'Transit times range from 2 to 4 business days for metropolitan regions, and 4 to 6 business days for remote or rural PIN codes.',
-        ],
-      },
-      {
-        heading: 'Tracking & Delivery Notifications',
-        content: [
-          'As soon as your shipment is dispatched from our Pune facility, you will receive real-time consignment tracking details directly via WhatsApp and email.',
+          'Production takes 2–3 days, followed by 3 days in transit after dispatch. Custom designs may take additional time.',
         ],
       },
     ],
@@ -59,15 +49,7 @@ const POLICIES: Record<string, PolicyContent> = {
         heading: 'Transit Damage & Defects',
         content: [
           'If your postal tube arrives visibly crushed or damaged in transit, please take photographs of the tube exterior prior to opening.',
-          'Inspect the vinyl film immediately upon unrolling. If any creases penetrate the adhesive liner or printing defects are observed, notify us via WhatsApp (+91 92842 47387) within 48 hours of delivery.',
-          'Defective or transit-damaged items will be replaced immediately with zero shipping charges.',
-        ],
-      },
-      {
-        heading: 'Fitment Guarantee',
-        content: [
-          'If you selected the correct vehicle model and the wrap does not match the factory panel contours due to a WNK template error, our engineering team will review photos of the dry fitment and recut the affected panels at no additional charge.',
-          'Please note: Once the vinyl backing paper has been peeled and adhesive activated on a vehicle, the product cannot be returned.',
+          'Inspect the vinyl film immediately upon unrolling. If any creases penetrate the adhesive liner or printing defects are observed, notify us via WhatsApp (+91 92842 47387) within 24 hours of delivery.',
         ],
       },
     ],
@@ -88,8 +70,7 @@ const POLICIES: Record<string, PolicyContent> = {
         heading: 'How Your Information is Used',
         content: [
           'To generate precision cut files tailored to your specific vehicle chassis.',
-          'To communicate real-time proofs, order status updates, and courier tracking details via WhatsApp.',
-          'We never sell, rent, or trade your personal contact details to third-party marketing brokers.',
+          'To communicate real-time proofs and order status updates via WhatsApp.',
         ],
       },
       {
@@ -123,6 +104,12 @@ const POLICIES: Record<string, PolicyContent> = {
         heading: 'Customer Fitment Responsibility',
         content: [
           'Customers are responsible for providing accurate vehicle model and year information. If aftermarket body kits, spoilers, or custom bumpers have been installed on the vehicle, customer must inform WNK studio prior to printing.',
+        ],
+      },
+      {
+        heading: 'AI-Generated Design References',
+        content: [
+          'AI-generated images submitted for custom wraps are treated as visual references only. The final design may differ in details, proportions, colours and graphic elements. WNK Automotive cannot guarantee a 100% accurate recreation of AI-generated designs.',
         ],
       },
     ],

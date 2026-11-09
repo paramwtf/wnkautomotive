@@ -4,7 +4,29 @@ import { getProductBySlug, PRODUCTS } from '../data/products';
 import { ProductGallery } from '../components/product/ProductGallery';
 import { ProductConfigurator } from '../components/product/ProductConfigurator';
 import { ProductFeaturesSection } from '../components/product/ProductFeaturesSection';
+import { FaqAccordion } from '../components/home/FaqAccordion';
 import { ProductCard } from '../components/common/ProductCard';
+
+const PRODUCT_FAQS = [
+  {
+    id: 'pdp-faq-1',
+    question: "What's in the kit",
+    answer:
+      'One wrap kit for your selected vehicle and wrap type. Check the coverage images for the included panels.',
+  },
+  {
+    id: 'pdp-faq-2',
+    question: 'Shipping & cancellations',
+    answer:
+      'Production takes 2–3 days, followed by 3 days in transit after dispatch. Custom designs may take additional time.',
+  },
+  {
+    id: 'pdp-faq-3',
+    question: "My vehicle isn't listed",
+    answer:
+      'Start a custom project and share your vehicle information.',
+  },
+];
 
 export const ProductDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -68,6 +90,17 @@ export const ProductDetailPage: React.FC = () => {
               images={product.galleryImages.length > 0 ? product.galleryImages : [product.cardImage]}
               alt={product.imageAlt || product.name}
             />
+
+            {/* Product FAQs Accordion */}
+            <div className="mt-8 pt-6 border-t border-line">
+              <span className="font-mono text-[10px] uppercase tracking-[0.4px] text-muted block mb-1">
+                PRODUCT & LOGISTICS QUESTIONS
+              </span>
+              <h3 className="font-sans font-medium text-[20px] text-ink mb-4">
+                Frequently Asked Questions<span className="text-[#e61919]">.</span>
+              </h3>
+              <FaqAccordion items={PRODUCT_FAQS} />
+            </div>
           </div>
 
           {/* Right Column: Interactive Configurator (5 cols) */}

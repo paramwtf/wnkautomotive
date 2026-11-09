@@ -34,15 +34,9 @@ const FAQS_LIST: FaqItem[] = [
   },
   {
     id: 'faq-5',
-    question: 'What if my order arrives damaged?',
-    answer:
-      'In the rare event of transit damage to the packaging or vinyl, send clear photos within 48 hours of delivery to wnkautomotive01@gmail.com or via WhatsApp (+91 92842 47387) for an immediate free replacement.',
-  },
-  {
-    id: 'faq-6',
     question: 'Can I order without an account?',
     answer:
-      'Yes. WNK does not require account creation. We handle your configuration, order verification, and tracking updates directly through WhatsApp and email.',
+      'Yes. WNK does not require account creation. We handle your configuration, order verification, and order updates directly through WhatsApp and email.',
   },
 ];
 
@@ -259,6 +253,15 @@ ${formData.question.trim()}`;
                     Uttam Nagar, Bavdhan<br />
                     Pune, 411021<br />
                     Maharashtra, India
+                  </p>
+                </div>
+
+                <div>
+                  <span className="text-muted block text-[11px] uppercase tracking-wider mb-1">
+                    STUDIO TIMINGS
+                  </span>
+                  <p className="text-ink font-sans text-[15px] leading-relaxed">
+                    11:00 AM – 7:00 PM
                   </p>
                 </div>
 

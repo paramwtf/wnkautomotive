@@ -53,9 +53,9 @@ export const VehicleFinder: React.FC<VehicleFinderProps> = ({ className = '' }) 
         {(selectedVehicle.make || selectedVehicle.model) && (
           <button
             onClick={clearVehicle}
-            className="font-mono text-[11px] text-muted hover:text-ink underline self-start sm:self-auto"
+            className="font-mono text-[11px] text-muted hover:text-ink underline self-start sm:self-auto cursor-pointer"
           >
-            Reset selectors
+            Clear all
           </button>
         )}
       </div>
@@ -159,7 +159,7 @@ export const VehicleFinder: React.FC<VehicleFinderProps> = ({ className = '' }) 
               Configured: <strong className="text-ink font-mono font-medium">{selectedVehicle.make} {selectedVehicle.model} {selectedVehicle.year}</strong> ({selectedVehicle.variant || 'All Variants'})
             </span>
           ) : (
-            <span>All WNK wrap patterns are custom-templated to exact CAD body proportions.</span>
+            <span>Select your vehicle to filter our engineered catalogue.</span>
           )}
         </p>
 

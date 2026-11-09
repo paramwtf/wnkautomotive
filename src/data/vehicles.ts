@@ -84,7 +84,7 @@ export const VEHICLE_DATABASE: VehicleMake[] = [
     ],
   },
   {
-    name: 'BMW',
+    name: 'BMW (Car)',
     type: 'Car',
     models: [
       {
@@ -174,14 +174,14 @@ export const VEHICLE_DATABASE: VehicleMake[] = [
     ],
   },
   {
-    name: 'BMW Motorrad',
+    name: 'BMW',
     type: 'Bike',
     models: [
       {
-        name: 'F 450GS',
+        name: 'F 450 GS',
         type: 'Bike',
-        years: [2022, 2023, 2024, 2025],
-        variants: ['Rallye', 'Trophy', 'Triple Black'],
+        years: [2026],
+        variants: ['Base', 'Exclusive', 'GS Trophy'],
       },
       {
         name: 'R 1250 GS',
