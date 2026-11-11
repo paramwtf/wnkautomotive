@@ -125,6 +125,94 @@ export const SHOWCASE_PROJECTS: ShowcaseProject[] = [
     description:
       'Pale camouflage and map-inspired graphics give the BMW F 450 GS an expedition-ready look.',
   },
+  {
+    id: 'proj-beasttiger',
+    tag: '11 / BEAST TIGER',
+    title: 'Beast Tiger Edition',
+    vehicle: 'Kawasaki / Ninja 300',
+    image: '/assets/images/kawasaki/kawasaki-ninja300-beast-tiger-01.png',
+    secondaryImage: '/assets/images/kawasaki/kawasaki-ninja300-beast-tiger-02.png',
+    slug: 'beast-tiger-edition-kawasaki-ninja300',
+    description:
+      'Neon tiger graphics bring a sharp, high-contrast look to the Kawasaki Ninja 300.',
+  },
+  {
+    id: 'proj-grenoble',
+    tag: '12 / GRENOBLE',
+    title: 'Grenoble Edition',
+    vehicle: 'Kawasaki / Z900',
+    image: '/assets/images/kawasaki/kawasaki-z900-grenoble-01.png',
+    secondaryImage: '/assets/images/kawasaki/kawasaki-z900-grenoble-02.png',
+    slug: 'grenoble-edition-kawasaki-z900',
+    description:
+      'Layered graphic details give the Kawasaki Z900 a distinctive, performance-inspired look.',
+  },
+  {
+    id: 'proj-phantom',
+    tag: '13 / PHANTOM',
+    title: 'Phantom Edition',
+    vehicle: 'Kawasaki / Ninja ZX-6R',
+    image: '/assets/images/kawasaki/kawasaki-zx6r-phantom-01.png',
+    secondaryImage: '/assets/images/kawasaki/kawasaki-zx6r-phantom-02.png',
+    slug: 'phantom-edition-kawasaki-ninja-zx6r',
+    description:
+      'Purple and magenta graphics give the Kawasaki Ninja ZX-6R a bold, track-inspired presence.',
+  },
+  {
+    id: 'proj-venomcarnage',
+    tag: '14 / VENOM CARNAGE',
+    title: 'Venom Carnage Edition',
+    vehicle: 'Kawasaki / Z1000, Z1100',
+    image: '/assets/images/kawasaki/kawasaki-z1000-venom-carnage-01.png',
+    secondaryImage: '/assets/images/kawasaki/kawasaki-z1000-venom-carnage-02.png',
+    slug: 'venom-carnage-edition-kawasaki-z1000',
+    description:
+      'Red-and-black Venom Carnage graphics give the Kawasaki Z1000 a dark, aggressive custom look.',
+  },
+  {
+    id: 'proj-glacierridge',
+    tag: '15 / GLACIER RIDGE',
+    title: 'Glacier Ridge Edition',
+    vehicle: 'BMW / G 310 GS',
+    image: '/assets/images/bmw/g310gs/bmw-g310gs-glacier-ridge-01.png',
+    secondaryImage: '/assets/images/bmw/g310gs/bmw-g310gs-glacier-ridge-02.png',
+    slug: 'glacier-ridge-edition-bmw-g310gs',
+    description:
+      'Terrain-inspired graphics give the BMW G 310 GS an alpine adventure look.',
+  },
+  {
+    id: 'proj-nomad',
+    tag: '16 / NOMAD',
+    title: 'Nomad Edition',
+    vehicle: 'BMW / G 310 GS',
+    image: '/assets/images/bmw/g310gs/bmw-g310gs-nomad-01.png',
+    secondaryImage: '/assets/images/bmw/g310gs/bmw-g310gs-nomad-02.png',
+    slug: 'nomad-edition-bmw-g310gs',
+    description:
+      'Travel-inspired graphics give the BMW G 310 GS a rugged, exploratory character.',
+  },
+  {
+    id: 'proj-waypoint',
+    tag: '17 / WAYPOINT',
+    title: 'Waypoint Edition',
+    vehicle: 'BMW / G 310 GS',
+    image: '/assets/images/bmw/g310gs/bmw-g310gs-waypoint-01.png',
+    secondaryImage: '/assets/images/bmw/g310gs/bmw-g310gs-waypoint-02.png',
+    slug: 'waypoint-edition-bmw-g310gs',
+    description:
+      'Navigation-inspired graphics give the BMW G 310 GS an expedition-ready look.',
+  },
+  {
+    id: 'proj-mozablue',
+    tag: '18 / MOZA BLUE BM',
+    title: 'Moza Blue BM Edition',
+    vehicle: 'BMW / G 310 GS',
+    image: '/assets/images/bmw/g310gs/bmw-g310gs-mozablue-01.png',
+    secondaryImage: '/assets/images/bmw/g310gs/bmw-g310gs-mozablue-02.png',
+    slug: 'moza-blue-bm-edition-bmw-g310gs',
+    description:
+      'Race-inspired graphics give the BMW G 310 GS a distinctive touring look.',
+  },
 ];
 
 // Stack panel slices representing file folders in a drawer
@@ -295,7 +383,7 @@ export const PerspectiveStack: React.FC = () => {
               stand apart<span className="text-[#e61919]">.</span>
             </h1>
             <p className="font-sans text-[14px] text-secondary leading-relaxed pt-2">
-              Explore motorcycle livery builds documented by WNK studio. Precision-measured for factory Aprilia and KTM bodywork.
+              Explore motorcycle livery builds documented by WNK studio. Precision-measured for factory Aprilia, KTM, BMW, and Kawasaki bodywork.
             </p>
             {activeStackItem && (
               <div className="pt-4">

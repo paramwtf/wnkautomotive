@@ -516,5 +516,301 @@
     "imageAlt": "BMW F 450 GS Explore Edition wrap",
     "productionLeadDays": 3,
     "shippingNotes": "Ships nationwide in reinforced rigid tube"
+  },
+  {
+    "id": 15,
+    "sku": "WNK-BIK-NJ300-BST",
+    "name": "Beast Tiger Edition",
+    "slug": "beast-tiger-edition-kawasaki-ninja300",
+    "vehicleType": "Bike",
+    "make": "Kawasaki",
+    "model": "Ninja 300",
+    "yearFrom": 2027,
+    "yearTo": 2027,
+    "variant": "Standard",
+    "bodyStyle": "Motorcycle",
+    "coverageOptions": [
+      "Full wrap"
+    ],
+    "colourOptions": [
+      "Neon Yellow / Aggressive Tiger Stripe"
+    ],
+    "finishOptions": [
+      "Matte",
+      "Gloss"
+    ],
+    "priceInr": 16000,
+    "taxIncluded": true,
+    "availability": "None",
+    "shortDescription": "Neon tiger graphics bring a sharp, high-contrast look to the Kawasaki Ninja 300.",
+    "description": "Neon tiger graphics bring a sharp, high-contrast look to the Kawasaki Ninja 300. Aggressive predator stripes contoured across the side fairings and front cowl on high-durability cast vinyl.",
+    "kitContents": "Full fairing wrap panels, fuel tank predator graphics, front nose cowl, tail section, squeegee",
+    "cardImage": "/assets/images/kawasaki/kawasaki-ninja300-beast-tiger-01.png",
+    "galleryImages": [
+      "/assets/images/kawasaki/kawasaki-ninja300-beast-tiger-01.png",
+      "/assets/images/kawasaki/kawasaki-ninja300-beast-tiger-02.png"
+    ],
+    "imageAlt": "Kawasaki Ninja 300 Beast Tiger Edition wrap",
+    "productionLeadDays": 3,
+    "shippingNotes": "Ships nationwide in reinforced rigid tube"
+  },
+  {
+    "id": 16,
+    "sku": "WNK-BIK-Z900-GRN",
+    "name": "Grenoble Edition",
+    "slug": "grenoble-edition-kawasaki-z900",
+    "vehicleType": "Bike",
+    "make": "Kawasaki",
+    "model": "Z900",
+    "yearFrom": 2024,
+    "yearTo": 2024,
+    "variant": "Standard",
+    "bodyStyle": "Motorcycle",
+    "coverageOptions": [
+      "Pre-cut wrap"
+    ],
+    "colourOptions": [
+      "Stealth Slate / Layered Graphic Accent"
+    ],
+    "finishOptions": [
+      "Matte",
+      "Gloss"
+    ],
+    "priceInr": 8000,
+    "taxIncluded": true,
+    "availability": "None",
+    "shortDescription": "Layered graphic details give the Kawasaki Z900 a distinctive, performance-inspired look.",
+    "description": "Layered graphic details give the Kawasaki Z900 a distinctive, performance-inspired look. Technical speed geometry designed for the Sugomi muscular shrouds and trellis tank panels.",
+    "kitContents": "Tank shrouds, headlight cowl graphics, belly pan accents, subframe decals, application squeegee",
+    "cardImage": "/assets/images/kawasaki/kawasaki-z900-grenoble-01.png",
+    "galleryImages": [
+      "/assets/images/kawasaki/kawasaki-z900-grenoble-01.png",
+      "/assets/images/kawasaki/kawasaki-z900-grenoble-02.png"
+    ],
+    "imageAlt": "Kawasaki Z900 Grenoble Edition wrap",
+    "productionLeadDays": 3,
+    "shippingNotes": "Ships nationwide in reinforced rigid tube"
+  },
+  {
+    "id": 17,
+    "sku": "WNK-BIK-ZX6R-PHN",
+    "name": "Phantom Edition",
+    "slug": "phantom-edition-kawasaki-ninja-zx6r",
+    "vehicleType": "Bike",
+    "make": "Kawasaki",
+    "model": "Ninja ZX-6R",
+    "yearFrom": 2024,
+    "yearTo": 2026,
+    "variant": "Standard",
+    "bodyStyle": "Motorcycle",
+    "coverageOptions": [
+      "Full wrap"
+    ],
+    "colourOptions": [
+      "Phantom Purple / Magenta / Carbon Black"
+    ],
+    "finishOptions": [
+      "Matte",
+      "Gloss"
+    ],
+    "priceInr": 21000,
+    "taxIncluded": true,
+    "availability": "None",
+    "shortDescription": "Purple and magenta graphics give the Kawasaki Ninja ZX-6R a bold, track-inspired presence.",
+    "description": "Purple and magenta graphics give the Kawasaki Ninja ZX-6R a bold, track-inspired presence. High-impact aerodynamic flow graphics engineered for the supersport 636 fairing silhouette.",
+    "kitContents": "Complete full-fairing kit, fuel tank cover wrap, ram-air intake mask, tail race cowl, squeegee",
+    "cardImage": "/assets/images/kawasaki/kawasaki-zx6r-phantom-01.png",
+    "galleryImages": [
+      "/assets/images/kawasaki/kawasaki-zx6r-phantom-01.png",
+      "/assets/images/kawasaki/kawasaki-zx6r-phantom-02.png"
+    ],
+    "imageAlt": "Kawasaki Ninja ZX-6R Phantom Edition wrap",
+    "productionLeadDays": 3,
+    "shippingNotes": "Ships nationwide in reinforced rigid tube"
+  },
+  {
+    "id": 18,
+    "sku": "WNK-BIK-Z1000-VNC",
+    "name": "Venom Carnage Edition",
+    "slug": "venom-carnage-edition-kawasaki-z1000",
+    "vehicleType": "Bike",
+    "make": "Kawasaki",
+    "model": "Z1000, Z1100",
+    "yearFrom": 2017,
+    "yearTo": 2017,
+    "variant": "Standard",
+    "bodyStyle": "Motorcycle",
+    "coverageOptions": [
+      "Full wrap"
+    ],
+    "colourOptions": [
+      "Symbiote Red / Deep Obsidian Black"
+    ],
+    "finishOptions": [
+      "Matte",
+      "Gloss"
+    ],
+    "priceInr": 16000,
+    "taxIncluded": true,
+    "availability": "None",
+    "shortDescription": "Red-and-black Venom Carnage graphics give the Kawasaki Z1000 a dark, aggressive custom look.",
+    "description": "Red-and-black Venom Carnage graphics give the Kawasaki Z1000 a dark, aggressive custom look. Dual-character symbiote jaws and crimson tendrils tailored to the streetfighter body of the Z1000 and Z1100.",
+    "kitContents": "Complete streetfighter wrap kit, muscular shroud graphics, tank symbiote wrap, tail mask, squeegee",
+    "cardImage": "/assets/images/kawasaki/kawasaki-z1000-venom-carnage-01.png",
+    "galleryImages": [
+      "/assets/images/kawasaki/kawasaki-z1000-venom-carnage-01.png",
+      "/assets/images/kawasaki/kawasaki-z1000-venom-carnage-02.png"
+    ],
+    "imageAlt": "Kawasaki Z1000, Kawasaki Z1100 Venom Carnage Edition wrap",
+    "productionLeadDays": 3,
+    "shippingNotes": "Ships nationwide in reinforced rigid tube"
+  },
+  {
+    "id": 19,
+    "sku": "WNK-BIK-G310GS-GLR",
+    "name": "Glacier Ridge Edition",
+    "slug": "glacier-ridge-edition-bmw-g310gs",
+    "vehicleType": "Bike",
+    "make": "BMW",
+    "model": "G 310 GS",
+    "yearFrom": 2024,
+    "yearTo": 2024,
+    "variant": "Standard",
+    "bodyStyle": "Motorcycle",
+    "coverageOptions": [
+      "Pre-cut wrap"
+    ],
+    "colourOptions": [
+      "Alpine Ice White / Glacial Blue / Slate"
+    ],
+    "finishOptions": [
+      "Matte",
+      "Gloss"
+    ],
+    "priceInr": 6000,
+    "taxIncluded": true,
+    "availability": "None",
+    "shortDescription": "Terrain-inspired graphics give the BMW G 310 GS an alpine adventure look.",
+    "description": "Terrain-inspired graphics give the BMW G 310 GS an alpine adventure look. Crisp glacial contour patterns designed to complement the G 310 GS adventure beak and tank shrouds.",
+    "kitContents": "Beak graphics, fuel tank contour wrap, side shroud panels, subframe decals, squeegee",
+    "cardImage": "/assets/images/bmw/g310gs/bmw-g310gs-glacier-ridge-01.png",
+    "galleryImages": [
+      "/assets/images/bmw/g310gs/bmw-g310gs-glacier-ridge-01.png",
+      "/assets/images/bmw/g310gs/bmw-g310gs-glacier-ridge-02.png"
+    ],
+    "imageAlt": "BMW G 310 GS Glacier Ridge Edition wrap",
+    "productionLeadDays": 3,
+    "shippingNotes": "Ships nationwide in reinforced rigid tube"
+  },
+  {
+    "id": 20,
+    "sku": "WNK-BIK-G310GS-NMD",
+    "name": "Nomad Edition",
+    "slug": "nomad-edition-bmw-g310gs",
+    "vehicleType": "Bike",
+    "make": "BMW",
+    "model": "G 310 GS",
+    "yearFrom": 2024,
+    "yearTo": 2024,
+    "variant": "Standard",
+    "bodyStyle": "Motorcycle",
+    "coverageOptions": [
+      "Pre-cut wrap"
+    ],
+    "colourOptions": [
+      "Desert Sand / Charcoal / Expedition Accent"
+    ],
+    "finishOptions": [
+      "Matte",
+      "Gloss"
+    ],
+    "priceInr": 6000,
+    "taxIncluded": true,
+    "availability": "None",
+    "shortDescription": "Travel-inspired graphics give the BMW G 310 GS a rugged, exploratory character.",
+    "description": "Travel-inspired graphics give the BMW G 310 GS a rugged, exploratory character. Earth-tone travel stripes and overland durability built on cast vinyl film.",
+    "kitContents": "Fuel tank wrap, front beak graphic, side shrouds, rear luggage panel accents, squeegee",
+    "cardImage": "/assets/images/bmw/g310gs/bmw-g310gs-nomad-01.png",
+    "galleryImages": [
+      "/assets/images/bmw/g310gs/bmw-g310gs-nomad-01.png",
+      "/assets/images/bmw/g310gs/bmw-g310gs-nomad-02.png"
+    ],
+    "imageAlt": "BMW G 310 GS Nomad Edition wrap",
+    "productionLeadDays": 3,
+    "shippingNotes": "Ships nationwide in reinforced rigid tube"
+  },
+  {
+    "id": 21,
+    "sku": "WNK-BIK-G310GS-WPT",
+    "name": "Waypoint Edition",
+    "slug": "waypoint-edition-bmw-g310gs",
+    "vehicleType": "Bike",
+    "make": "BMW",
+    "model": "G 310 GS",
+    "yearFrom": 2024,
+    "yearTo": 2024,
+    "variant": "Standard",
+    "bodyStyle": "Motorcycle",
+    "coverageOptions": [
+      "Pre-cut wrap"
+    ],
+    "colourOptions": [
+      "Cartography Slate / Coordinate Neon"
+    ],
+    "finishOptions": [
+      "Matte",
+      "Gloss"
+    ],
+    "priceInr": 6000,
+    "taxIncluded": true,
+    "availability": "None",
+    "shortDescription": "Navigation-inspired graphics give the BMW G 310 GS an expedition-ready look.",
+    "description": "Navigation-inspired graphics give the BMW G 310 GS an expedition-ready look. High-precision coordinate markings, compass lines, and topographic textures tailored to the G 310 GS chassis.",
+    "kitContents": "Tank coordinate shroud wrap, front adventure beak panels, tail section decals, squeegee",
+    "cardImage": "/assets/images/bmw/g310gs/bmw-g310gs-waypoint-01.png",
+    "galleryImages": [
+      "/assets/images/bmw/g310gs/bmw-g310gs-waypoint-01.png",
+      "/assets/images/bmw/g310gs/bmw-g310gs-waypoint-02.png"
+    ],
+    "imageAlt": "BMW G 310 GS Waypoint Edition wrap",
+    "productionLeadDays": 3,
+    "shippingNotes": "Ships nationwide in reinforced rigid tube"
+  },
+  {
+    "id": 22,
+    "sku": "WNK-BIK-G310GS-MZB",
+    "name": "Moza Blue BM Edition",
+    "slug": "moza-blue-bm-edition-bmw-g310gs",
+    "vehicleType": "Bike",
+    "make": "BMW",
+    "model": "G 310 GS",
+    "yearFrom": 2024,
+    "yearTo": 2024,
+    "variant": "Standard",
+    "bodyStyle": "Motorcycle",
+    "coverageOptions": [
+      "Pre-cut wrap"
+    ],
+    "colourOptions": [
+      "Monza Blue / Technical Grey / Alpine White"
+    ],
+    "finishOptions": [
+      "Matte",
+      "Gloss"
+    ],
+    "priceInr": 6000,
+    "taxIncluded": true,
+    "availability": "None",
+    "shortDescription": "Race-inspired graphics give the BMW G 310 GS a distinctive touring look.",
+    "description": "Race-inspired graphics give the BMW G 310 GS a distinctive touring look. Dynamic blue racing stripes paired with sharp touring geometry crafted from UV-resistant cast vinyl.",
+    "kitContents": "Beak race graphics, fuel tank side panels, rear flank livery, installation squeegee",
+    "cardImage": "/assets/images/bmw/g310gs/bmw-g310gs-mozablue-01.png",
+    "galleryImages": [
+      "/assets/images/bmw/g310gs/bmw-g310gs-mozablue-01.png",
+      "/assets/images/bmw/g310gs/bmw-g310gs-mozablue-02.png"
+    ],
+    "imageAlt": "BMW G 310 GS Moza Blue BM Edition wrap",
+    "productionLeadDays": 3,
+    "shippingNotes": "Ships nationwide in reinforced rigid tube"
   }
 ]
