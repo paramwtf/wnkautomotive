@@ -58,7 +58,7 @@ export const VideoHero: React.FC = () => {
       >
         <video
           ref={videoRef}
-          src="/assets/videos/animo-cover-ring-1080p.mp4"
+          src="/assets/videos/animo-cover-ring-2160p.mp4"
           autoPlay
           loop
           muted
